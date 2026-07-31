@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OUTFITR / Young Electric — Creator Shooting Brief</title>
+<style>
+  :root{
+    --paper:#F4F5F1; --ink:#18211C; --pine:#1F2D27; --pine-2:#26362E;
+    --moss:#5F7A64; --moss-ink:#3C4F42; --blaze:#DA5A2A; --blaze-deep:#B8471F;
+    --steel:#2C4A55; --kraft:#EAE3D3; --line:#D5D9CF; --line-dark:#3A4A41; --paper-dim:#ECEEE7;
+    --sans:"Helvetica Neue",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono","SFMono-Regular",Menlo,Consolas,"Liberation Mono",monospace;
+    --wrap:940px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--wrap); margin:0 auto; padding:0 22px}
+  a{color:var(--blaze-deep); text-underline-offset:2px}
+  h1,h2,h3{text-wrap:balance; margin:0}
+  p{margin:0}
+  [hidden]{display:none !important}
+  .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--moss); font-weight:600}
+
+  /* sticky bar */
+  nav.bar{position:sticky; top:0; z-index:30; background:rgba(31,45,39,.97); backdrop-filter:saturate(1.4) blur(6px); border-bottom:1px solid var(--line-dark)}
+  nav.bar .wrap{display:flex; align-items:center; gap:12px; min-height:50px; flex-wrap:wrap; padding-top:7px; padding-bottom:7px}
+  nav.bar .brand{font-family:var(--mono); font-size:12px; letter-spacing:.13em; color:#EDEFEA; font-weight:700; text-transform:uppercase; white-space:nowrap}
+  nav.bar .cur{font-family:var(--mono); font-size:12px; color:#9FB4A5; margin-left:auto; display:flex; align-items:center; gap:8px}
+  nav.bar .cur b{color:#EDEFEA}
+  nav.bar .cur a{font-family:var(--mono); color:var(--blaze); text-decoration:none; border:1px solid var(--blaze); border-radius:4px; padding:3px 8px; font-size:11px; white-space:nowrap}
+
+  /* masthead */
+  header.hero{background:var(--pine); color:#EDEFEA; padding:34px 0 28px; position:relative; overflow:hidden}
+  header.hero::after{content:""; position:absolute; inset:0; background:repeating-linear-gradient(90deg,transparent 0 39px,rgba(255,255,255,.03) 39px 40px),repeating-linear-gradient(0deg,transparent 0 39px,rgba(255,255,255,.03) 39px 40px); pointer-events:none}
+  header.hero .wrap{position:relative; z-index:1}
+  .kicker{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:12px}
+  .kicker .tag{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#0f1712; background:var(--blaze); padding:4px 9px; border-radius:2px; font-weight:700}
+  .kicker .model{font-family:var(--mono); font-size:12px; letter-spacing:.13em; color:#9FB4A5; text-transform:uppercase}
+  header.hero h1{font-size:clamp(26px,5vw,42px); line-height:1.04; font-weight:800; letter-spacing:-.02em; margin:0 0 11px}
+  header.hero h1 .r{color:var(--blaze)}
+  header.hero .lede{font-size:clamp(15px,2.1vw,18px); color:#C9D6CC; max-width:58ch; line-height:1.5}
+  header.hero .lede b{color:#fff}
+  .metastrip{display:grid; grid-template-columns:repeat(auto-fit,minmax(108px,1fr)); gap:1px; background:var(--line-dark); border:1px solid var(--line-dark); margin-top:22px; border-radius:4px; overflow:hidden}
+  .metastrip div{background:var(--pine-2); padding:9px 12px}
+  .metastrip dt{font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#8AA091}
+  .metastrip dd{margin:3px 0 0; font-family:var(--mono); font-size:13px; color:#EDEFEA; font-weight:600}
+
+  section{padding:40px 0; border-top:1px solid var(--line)}
+  .sec-head{display:flex; align-items:baseline; gap:13px; margin-bottom:6px}
+  .sec-num{font-family:var(--mono); font-size:13px; color:var(--blaze); font-weight:700}
+  h2{font-size:clamp(20px,3.3vw,27px); font-weight:800; letter-spacing:-.015em; line-height:1.1}
+  .sec-sub{color:var(--moss-ink); max-width:64ch; margin:11px 0 22px; font-size:15px}
+
+  /* ===== product picker (prominent) ===== */
+  #pick{background:linear-gradient(180deg,#EEF0EB, var(--paper)); border-top:none}
+  .prod-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:13px}
+  .pcard{border:2px solid var(--line); border-radius:10px; background:#fff; padding:9px; cursor:pointer; display:flex; flex-direction:column; gap:7px; text-align:left; font:inherit; transition:border-color .15s, transform .15s, box-shadow .15s}
+  .pcard:hover{border-color:var(--moss); transform:translateY(-2px)}
+  .pcard.selected{border-color:var(--blaze); box-shadow:0 0 0 2px rgba(218,90,42,.25)}
+  .pcard .ph{aspect-ratio:4/3; border-radius:6px; overflow:hidden; background:var(--paper-dim); position:relative; display:flex; align-items:center; justify-content:center}
+  .pcard .ph img{width:100%; height:100%; object-fit:cover; display:block}
+  .pcard .ph::after{content:attr(data-num); position:absolute; font-family:var(--mono); font-weight:700; font-size:24px; color:var(--moss); opacity:0}
+  .pcard.noimg .ph img{display:none}
+  .pcard.noimg .ph::after{opacity:1}
+  .pcard .pn{font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); display:flex; align-items:center; gap:6px}
+  .pcard .pn .dot{width:7px; height:7px; border-radius:50%; background:var(--line); flex:0 0 auto}
+  .pcard.selected .pn{color:var(--blaze-deep)} .pcard.selected .pn .dot{background:var(--blaze)}
+  .pcard .pl{font-family:var(--mono); font-size:10.5px; color:var(--moss); letter-spacing:.02em; line-height:1.35}
+
+  /* ===== product ===== */
+  .prod-line{background:var(--kraft); border:1px solid #DBD3BF; border-radius:6px; padding:15px 19px; margin-bottom:18px; font-size:15.5px}
+  .prod-line b{color:var(--ink)}
+  /* highlight badges */
+  .badges{display:flex; flex-wrap:wrap; gap:9px; margin:0 0 20px}
+  .badge{font-family:var(--mono); font-size:13px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:9px 14px; border-radius:6px; display:inline-flex; align-items:center; gap:6px; color:#fff; background:var(--blaze)}
+  .badge b{font-size:18px; letter-spacing:0}
+  .badge.dark{background:var(--pine)}
+  /* brand link block */
+  .brands{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:0 0 24px}
+  @media(max-width:560px){ .brands{grid-template-columns:1fr} }
+  .brandbtn{display:flex; flex-direction:column; gap:2px; text-decoration:none; border-radius:9px; padding:14px 18px; border:1px solid transparent}
+  .brandbtn .bl{font-family:var(--mono); font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; opacity:.8}
+  .brandbtn .bn{font-size:19px; font-weight:800; letter-spacing:-.01em; display:flex; align-items:center; gap:7px}
+  .brandbtn.of{background:var(--pine); color:#EDEFEA}
+  .brandbtn.of .bn{color:#fff}
+  .brandbtn.yg{background:var(--steel); color:#DCE7EA}
+  .brandbtn.yg .bn{color:#fff}
+  .brandbtn:hover{filter:brightness(1.08)}
+  .brandbtn .arw{color:var(--blaze); font-weight:700}
+
+  .specs{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden}
+  .spec{background:var(--paper); padding:14px 16px}
+  .spec .n{font-family:var(--mono); font-size:11px; color:var(--moss); letter-spacing:.08em}
+  .spec h4{margin:4px 0 4px; font-size:15px; font-weight:700; letter-spacing:-.01em}
+  .spec h4 em{font-style:normal; color:var(--blaze-deep)}
+  .spec p{font-size:13px; color:var(--moss-ink); line-height:1.42}
+
+  /* must-haves */
+  .must{border:1.5px solid var(--blaze); border-radius:7px; overflow:hidden; background:#fff}
+  .must .top{background:var(--blaze); color:#fff; padding:12px 20px; display:flex; align-items:center; gap:12px; flex-wrap:wrap}
+  .must .top strong{font-size:16px} .must .top span{font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; background:rgba(0,0,0,.22); padding:3px 8px; border-radius:3px}
+  .must .grp{padding:15px 20px 5px; border-top:1px solid var(--line)} .must .grp:first-of-type{border-top:none}
+  .must .grp h4{font-family:var(--mono); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--moss); margin:0 0 10px}
+  ul.check{list-style:none; margin:0 0 11px; padding:0; display:flex; flex-direction:column; gap:9px}
+  ul.check li{display:flex; gap:11px; align-items:flex-start; font-size:14.5px; line-height:1.42}
+  ul.check li::before{content:"\2713"; font-family:var(--mono); font-weight:700; color:var(--blaze); border:1.5px solid var(--blaze); border-radius:3px; width:20px; height:20px; flex:0 0 20px; display:flex; align-items:center; justify-content:center; font-size:12px; margin-top:1px}
+  ul.check li code{font-family:var(--mono); font-size:13px; background:var(--paper-dim); padding:1px 6px; border-radius:3px; color:var(--ink)}
+
+  .rule{background:var(--pine); color:#EDEFEA; border-radius:7px; padding:22px 24px; display:flex; gap:16px; align-items:flex-start}
+  .rule .mk{font-family:var(--mono); font-size:30px; line-height:.8; color:var(--blaze); font-weight:700}
+  .rule h3{font-size:17px; margin:0 0 6px; color:#fff} .rule p{color:#C4D2C8; font-size:14.5px; max-width:64ch} .rule b{color:#fff}
+
+  /* shot cards */
+  .shots{display:flex; flex-direction:column; gap:16px}
+  .shot{border:1px solid var(--line); border-radius:8px; background:#fff; overflow:hidden}
+  .shot > .hd{display:flex; align-items:center; gap:13px; padding:13px 18px; background:var(--paper); border-bottom:1px solid var(--line); flex-wrap:wrap}
+  .shot .tc{font-family:var(--mono); font-size:12px; font-weight:700; color:#fff; background:var(--moss-ink); padding:4px 9px; border-radius:3px; white-space:nowrap}
+  .shot .tc.req{background:var(--blaze)}
+  .shot .st{font-family:var(--mono); font-size:11px; color:var(--moss); letter-spacing:.09em}
+  .shot .hd h3{font-size:17px; font-weight:700; letter-spacing:-.01em; flex:1 1 auto; min-width:170px}
+  .shot .flag{font-family:var(--mono); font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; padding:3px 8px; border-radius:3px}
+  .shot .flag.r{color:var(--blaze-deep); border:1px solid var(--blaze)} .shot .flag.o{color:var(--moss); border:1px solid var(--line)}
+  .shot .bd{padding:16px 18px; display:flex; flex-direction:column; gap:10px}
+  .row{display:grid; grid-template-columns:76px 1fr; gap:13px; align-items:start}
+  .row .lab{font-family:var(--mono); font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--moss); padding-top:2px}
+  .row .val{font-size:14.5px; line-height:1.5} .row .val em{font-style:normal; color:var(--moss-ink)}
+  .row.say .val{background:var(--paper-dim); border-left:3px solid var(--moss); padding:8px 12px; border-radius:0 4px 4px 0}
+  .row.say .val::before{content:"\201C"} .row.say .val::after{content:"\201D"}
+  .row.tip .val{color:var(--blaze-deep)}
+  @media(max-width:520px){ .row{grid-template-columns:1fr; gap:3px} }
+  /* bigger reference frames */
+  .frames{border-top:1px dashed var(--line); padding:14px 12px 14px; background:#FBFBF9}
+  .frames .cap{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--moss); margin:0 6px 9px}
+  .frames img{width:100%; display:block; border-radius:6px; border:1px solid var(--line)}
+
+  .lines{display:flex; flex-direction:column; gap:9px}
+  .line{background:#fff; border:1px solid var(--line); border-left:3px solid var(--moss); border-radius:0 5px 5px 0; padding:11px 15px; font-size:14.5px; line-height:1.5}
+  .line .who{font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--moss); display:block; margin-bottom:3px}
+
+  .two{display:grid; grid-template-columns:1fr 1fr; gap:15px} @media(max-width:640px){ .two{grid-template-columns:1fr} }
+  .panel{border:1px solid var(--line); border-radius:7px; padding:17px 19px; background:#fff}
+  .panel h4{font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; margin:0 0 12px}
+  .panel.go h4{color:var(--moss-ink)} .panel.no h4{color:var(--blaze-deep)}
+  .panel ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px}
+  .panel li{font-size:14px; line-height:1.45; display:flex; gap:10px; align-items:flex-start}
+  .panel.go li::before{content:"\2192"; font-family:var(--mono); color:var(--moss); font-weight:700}
+  .panel.no li::before{content:"\00D7"; font-family:var(--mono); color:var(--blaze); font-weight:700; font-size:17px; line-height:1.1}
+  .note{font-size:13px; color:var(--moss); font-family:var(--mono); margin-top:11px}
+
+  footer{background:var(--pine); color:#9FB4A5; padding:30px 0; margin-top:8px; font-family:var(--mono); font-size:12.5px; letter-spacing:.03em}
+  footer .wrap{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap} footer b{color:#EDEFEA}
+  @media print{ nav.bar{position:static} .frames{-webkit-print-color-adjust:exact} section{padding:22px 0} }
+</style>
+</head>
+<body>
+
+<nav class="bar"><div class="wrap">
+  <span class="brand">OUTFITR · Young Electric — Creator Brief</span>
+  <span class="cur">Reviewing: <b data-field="model">4148</b>&nbsp;<a href="#pick">↑ change product</a></span>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="kicker">
+    <span class="tag">Creator Shooting Brief</span>
+    <span class="model">Model <span data-field="model">4148</span> · YouTube Review</span>
+  </div>
+  <h1 data-field="headline">2-Bike Hitch E-bike Rack <span class="r">with Ramp</span></h1>
+  <p class="lede">A shot-by-shot guide to a video that <b>passes review the first time</b>. Shoot it your way and keep it natural — just hit every <b>✓ Must-Have</b>. That's the whole checklist.</p>
+  <dl class="metastrip">
+    <div><dt>Platform</dt><dd>YouTube</dd></div>
+    <div><dt>Length</dt><dd>≥ 10 min</dd></div>
+    <div><dt>Format</dt><dd>4K + audio</dd></div>
+    <div><dt>Deadline</dt><dd>10 days</dd></div>
+    <div><dt>Before publish</dt><dd>Send preview</dd></div>
+  </dl>
+</div></header>
+
+<main>
+
+  <!-- ============ PRODUCT PICKER ============ -->
+  <section id="pick"><div class="wrap">
+    <div class="sec-head"><span class="sec-num">★</span><h2>Which product are you reviewing?</h2></div>
+    <p class="sec-sub">Tap your product below — the whole brief (specs, steps, talking points) retunes to it. The number is our internal reference; match it to your shipment.</p>
+    <div class="prod-grid" id="grid"></div>
+  </div></section>
+
+  <div class="wrap">
+
+  <!-- ============ 01 PRODUCT ============ -->
+  <section id="product">
+    <div class="sec-head"><span class="sec-num">01</span><h2>The product — know it before you shoot</h2></div>
+    <p class="sec-sub">One idea should come through the whole video: loading a heavy e-bike used to be a two-person struggle — with this rack, one person handles it and drives off.</p>
+
+    <div class="badges" id="badges">
+      <span class="badge dark"><b data-field="cap">200</b> lb</span>
+      <span class="badge dark"><b data-field="bikes">2</b>-bike</span>
+      <span class="badge" data-show="ramp">Built-in ramp</span>
+      <span class="badge" data-show="fold">Folds flat</span>
+      <span class="badge" data-show="tilt">Tilt access</span>
+      <span class="badge" data-show="fatTire">5″ fat-tire</span>
+    </div>
+
+    <div class="prod-line">
+      <b>What it is:</b> a <span data-field="bikes">2</span>-bike hitch-mounted rack rated to <b><span data-field="cap">200</span> lb total</b><span data-show="ramp">, with a <b>built-in ramp</b> so you roll bikes up instead of lifting them</span>. <span data-show="fatTire">Fits fat tires up to 5″. </span><span data-show="fold">Folds flat for storage. </span><span data-show="tilt">Tilts back for trunk access. </span>Drops onto any standard 2″ hitch.
+    </div>
+
+    <div class="brands">
+      <a class="brandbtn of" data-field="url" href="#" target="_blank" rel="noopener">
+        <span class="bl">Product page — put this link in your description</span>
+        <span class="bn">OUTFITR <span class="arw">↗</span></span>
+      </a>
+      <a class="brandbtn yg" data-field="youngUrl" href="https://youngelectricbikes.com/" target="_blank" rel="noopener">
+        <span class="bl">Same product, our other brand</span>
+        <span class="bn">Young Electric <span class="arw">↗</span></span>
+      </a>
+    </div>
+
+    <div class="say-name" style="margin:0 0 20px; display:flex; flex-wrap:wrap; gap:9px">
+      <span style="font-family:var(--mono);font-size:13px;background:#fff;border:1px solid var(--line);padding:6px 11px;border-radius:3px">Say the brand + name clearly: <b style="color:var(--blaze-deep)"><span data-field="brandsay">OUTFITR / Young Electric</span> — <span data-field="name">2-Bike Hitch E-bike Rack with Ramp</span></b></span>
+      <span style="font-family:var(--mono);font-size:13px;background:#fff;border:1px solid var(--line);padding:6px 11px;border-radius:3px">Hashtags: <b style="color:var(--blaze-deep)">#OUTFITR&nbsp;&nbsp;#EbikeRack</b></span>
+    </div>
+
+    <div class="specs">
+      <div class="spec"><div class="n">load</div><h4><em data-field="cap">200</em> lb capacity</h4><p>Carries <span data-field="bikes">2</span> e-bike(s) or heavy bicycles, securely.</p></div>
+      <div class="spec" data-show="ramp"><div class="n">key feature</div><h4><em>Built-in ramp</em></h4><p>Roll bikes up — no heavy lifting. The hero feature.</p></div>
+      <div class="spec"><div class="n">secure</div><h4>Adjustable straps</h4><p>Ratchet to any wheelbase; protect the frame from scratches.</p></div>
+      <div class="spec" data-show="fatTire"><div class="n">fit</div><h4><em>5″</em> fat-tire support</h4><p>Ultra-wide cradles fit tires up to 5″ wide.</p></div>
+      <div class="spec"><div class="n">stability</div><h4>Zero-wobble</h4><p>Anti-wobble fit keeps the rack tight to the hitch.</p></div>
+      <div class="spec" data-show="fold"><div class="n">storage</div><h4><em>Easy folding</em></h4><p>Folds flat against the car for compact storage.</p></div>
+      <div class="spec" data-show="tilt"><div class="n">access</div><h4><em>Tilt-away</em></h4><p>Tilts back for trunk access with bikes still loaded.</p></div>
+      <div class="spec"><div class="n">weight</div><h4>Lightweight aluminum</h4><p>≈ ⅓ the weight of steel racks — easy to handle.</p></div>
+      <div class="spec"><div class="n">fit</div><h4>Universal 2″ hitch</h4><p>Fits sedans, trucks, SUVs, RVs. 1.25″ adaptor available.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 02 MUST-HAVES ============ -->
+  <section id="must">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Must-haves — the pass / reshoot line</h2></div>
+    <p class="sec-sub">Full creative freedom on style and pacing. These are the only non-negotiables — if one is missing, we're required to ask for a reshoot. Tick them off before you publish.</p>
+    <div class="must">
+      <div class="top"><strong>✓ Include every item below</strong><span>Auto-reject if missing</span></div>
+      <div class="grp"><h4>Say it</h4><ul class="check">
+        <li>Say the brand + full product name clearly on camera: <b>“<span data-field="brandsay">OUTFITR / Young Electric</span> <span data-field="name">2-Bike Hitch E-bike Rack with Ramp</span>.”</b></li>
+        <li>Put the <b>product-page link</b> in the description.</li>
+        <li>Include the hashtags <code>#OUTFITR</code> <code>#EbikeRack</code>.</li>
+      </ul></div>
+      <div class="grp"><h4>Show it — with real testing, not just talking</h4><ul class="check">
+        <li><span data-show="ramp">Demonstrate the <b>ramp</b> loading a bike, </span>the <b>adjustable straps</b>, <span data-show="fold">the <b>easy folding</b>, </span><span data-show="tilt">the <b>tilt access</b>, </span>and <b>universal fit</b> on your hitch.</li>
+        <li>Use at least <b>one real e-bike</b><span data-show="multibike"> (two if you have them — it shows the multi-bike + safety-space feature)</span>.</li>
+      </ul></div>
+      <div class="grp"><h4>Road test — required, not optional</h4><ul class="check">
+        <li>A <b>real-world road test</b> beyond gentle turns: include <b>rough / uneven terrain</b> — dirt roads, speed bumps, inclines or declines — to prove stability and durability.</li>
+      </ul></div>
+      <div class="grp"><h4>Craft</h4><ul class="check">
+        <li><b>≥ 10 minutes</b>, in <b>4K</b> with <b>clear audio</b>.</li>
+        <li><b>Mostly outdoors</b>, scenic backgrounds where you can.</li>
+        <li><b>Speak naturally</b> — don't read from a script on camera.</li>
+        <li><b>Appear on camera</b> yourself — it adds credibility.</li>
+      </ul></div>
+      <div class="grp"><h4>Process</h4><ul class="check">
+        <li><b>Send us a preview before publishing.</b> Publish only after we approve.</li>
+        <li>Upload within <b>10 days</b> of receiving the product.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="rule"><div class="mk">“</div><div>
+      <h3>The one filming rule that makes these videos work</h3>
+      <p>Stop talking while you operate. Show the action and <b>let the mechanical sounds carry it</b> — the ramp locking in, the ratchet clicking, the frame folding shut. Record those clean, and save voiceover for before or after the action, not on top of it. <b>Show, don't narrate.</b></p>
+    </div></div>
+  </section>
+
+  <!-- ============ 03 THE SHOOT ============ -->
+  <section id="shoot">
+    <div class="sec-head"><span class="sec-num">03</span><h2>The shoot — shot by shot</h2></div>
+    <p class="sec-sub">A ~10-minute flow that hits every requirement. Timecodes are a guide; the road test is the longest, most important stretch. <em>SAY</em> lines are talking points to put in your own words — never read verbatim. The reference frames under each step are real examples of the shot we want.</p>
+
+    <div class="shots">
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">00:00–00:30</span><span class="st">STEP 1</span><h3>Hook — the struggle</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Open on the real pain point: someone struggling to lift a heavy e-bike beside their car. Then a fast 3-cut highlight reel of the payoff — riding a trail, the bike sitting rock-steady on the rack while driving, quick install close-ups to come.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">If you own an e-bike, you already know the worst part — getting it onto the car. Let me show you the rack that fixed that for me.</span></div>
+          <div class="row"><span class="lab">Sound</span><span class="val"><em>Upbeat music. No voiceover over the highlight cuts.</em></span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc">00:30–01:00</span><span class="st">STEP 2</span><h3>Unbox &amp; first look</h3><span class="flag o">Recommended</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Overhead / top-down on a garage floor or lawn. Open the box on camera and introduce the product as you unbox.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">This is the <span data-field="name">2-Bike Hitch E-bike Rack with Ramp</span> — built for heavy e-bikes, up to <span data-field="cap">200</span> pounds total. <span data-show="ramp">Best part: a built-in ramp, so no more struggling to lift your bike. </span>Let's see what's inside.</span></div>
+          <div class="row tip"><span class="lab">Tip</span><span class="val">Skip filming the full frame assembly — it's slow to watch. Assemble off-camera and pick up at install.</span></div>
+        </div>
+        <div class="frames"><div class="cap">// Reference frames — STEP 2</div><img src="imgs/step2.jpg" alt="Unboxing reference frames" loading="lazy"></div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">01:00–01:40</span><span class="st">STEP 3</span><h3>Deploy &amp; install on the hitch</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val"><span data-show="fold">Take the folded rack out and unfold it (show how light it is). </span>Mount it onto your 2″ hitch and tighten it down. Close-ups: main arm into the receiver, the anti-wobble knob tightening, the wrench on the bolts.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">It's aluminum — about a third the weight of a steel rack — so I can handle it one-handed. It fits any standard 2-inch hitch, and there's a 1.25-inch adaptor if you need it.</span></div>
+          <div class="row"><span class="lab">Sound</span><span class="val"><em>Retain metal-on-metal sounds. Minimal narration — let the operation speak.</em></span></div>
+        </div>
+        <div class="frames"><div class="cap">// Reference frames — STEP 3</div><img src="imgs/step3.jpg" alt="Install reference frames" loading="lazy"></div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc">01:40–02:10</span><span class="st">STEP 4</span><h3>Empty-rack stability test</h3><span class="flag o">Recommended</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Car parked. Stand on the empty rack and rock it hard with your body weight — simulate the jolting of a drive. Two angles: a front full shot showing it barely moves, and a top-down of you + rack + car.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">Let me test it — looks like it's shaking, but that's me forcing it. Look at the rack itself: it doesn't move an inch. That's real stability.</span></div>
+        </div>
+        <div class="frames"><div class="cap">// Reference frames — STEP 4</div><img src="imgs/step4.jpg" alt="Stability test reference frames" loading="lazy"></div>
+      </div>
+
+      <div class="shot" data-show="ramp">
+        <div class="hd"><span class="tc req">02:10–03:00</span><span class="st">STEP 5</span><h3>The ramp — load the bike</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Lock the ramp into place, then push a fat-tire e-bike up it single-handed. Film the push from 3 angles and quick-cut them: <em>①</em> full side view (smooth roll up), <em>②</em> low 45° from behind (ramp angle + tire rolling), <em>③</em> front-on, bike coming toward the lens.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">The ramp is the part that sold me — you don't lift anything. You just line it up and roll it into place.</span></div>
+          <div class="row tip"><span class="lab">Tip</span><span class="val">This is the money shot. Do it one-handed if you safely can — it proves the point better than any sentence.</span></div>
+        </div>
+        <div class="frames"><div class="cap">// Reference frames — STEP 5</div><img src="imgs/step5.jpg" alt="Ramp loading reference frames" loading="lazy"></div>
+      </div>
+
+      <div class="shot" data-show="noramp">
+        <div class="hd"><span class="tc req">02:10–03:00</span><span class="st">STEP 5</span><h3>Load the bike</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Lift the bike and set it into the cradles / arms. Film it cleanly from the side and front. Show that the arms line the bike up quickly and hold it steady.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">Getting it up takes a moment, but once it's in the cradles it locks in fast and sits rock-solid.</span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">03:00–03:50</span><span class="st">STEP 6</span><h3>Straps, cradle &amp; secure</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Extreme close-up of the front wheel settling into the cradle, then a top-down of your hands ratcheting the straps tight.<span data-show="multibike"> If you have two bikes, load both and show the adjustable arms holding them apart with no contact.</span></span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">The straps ratchet down to any wheelbase and the cradle wraps the tire, so nothing rubs or scratches.<span data-show="multibike"> With two bikes there's a safety gap built in — they never knock into each other.</span></span></div>
+          <div class="row"><span class="lab">Sound</span><span class="val"><em>Keep the ratchet clicks clean; light music, no voiceover during tightening.</em></span></div>
+        </div>
+        <div class="frames"><div class="cap">// Reference frames — STEP 6</div><img src="imgs/step6.jpg" alt="Straps and cradle reference frames" loading="lazy"></div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc">03:50–04:20</span><span class="st">STEP 7</span><h3>Loaded stability test</h3><span class="flag o">Recommended</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Bikes loaded. Grab the rack and shake it hard — left/right and back/forth. Close-up on your hands pushing, then cut to the full view showing the loaded rack staying dead still. Optionally push the handlebars ~5–10 cm and zoom the connection points — no wobble.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">Look — I'm really shaking it, and it stays put. That's what I call zero wobble.</span></div>
+        </div>
+        <div class="frames"><div class="cap">// Reference frames — STEP 7</div><img src="imgs/step7.jpg" alt="Loaded stability reference frames" loading="lazy"></div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">04:20–09:00</span><span class="st">STEP 8</span><h3>Drive off &amp; road test — the required core</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Get in, drive off, and film a real road test from a third-person view where you can — a GoPro on the exterior (passenger side) on the rack + bikes, plus scenic driving shots. Cover a mix of terrain, not just easy turns:</span></div>
+          <div class="row"><span class="lab">City</span><span class="val"><em>Stop-and-go at lights, a few speed bumps, some rough / pothole asphalt.</em></span></div>
+          <div class="row"><span class="lab">Trail / hills</span><span class="val"><em>Sharp turns, gravel, an incline and a decline.</em></span></div>
+          <div class="row"><span class="lab">Highway</span><span class="val"><em>Sustained high speed, and a crosswind stretch if you can.</em></span></div>
+          <div class="row"><span class="lab">Pit stop</span><span class="val"><em>Pull over on flat ground and check: tire clearance, strap tension, hitch knob — confirm nothing loosened.</em></span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">Bumpy road — let's see how the bikes hold up and whether anything's come loose. … Still tight. Nothing moved.</span></div>
+          <div class="row"><span class="lab">Sound</span><span class="val"><em>Retain real wind + road noise; short voiceover between segments.</em></span></div>
+        </div>
+        <div class="frames"><div class="cap">// Reference frames — drive-off + road test</div><img src="imgs/step8.jpg" alt="Drive away reference frames" loading="lazy" style="margin-bottom:9px"><img src="imgs/step9.jpg" alt="Road test reference frames" loading="lazy"></div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc">09:00–09:40</span><span class="st">STEP 9</span><h3>Arrive, unload<span data-show="fold"> &amp; fold</span></h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val"><span data-show="tilt">At the destination, tap the tilt release and tilt the whole rack back to reach the trunk with bikes still loaded, then reset it. </span>Roll the e-bike smoothly down<span data-show="ramp"> the ramp</span>.<span data-show="fold"> Then, with the rack empty, fold it flat against the car to show how little space it takes — close-ups on the pin pulling and the frame folding shut.</span></span></div>
+          <div class="row say" data-show="fold"><span class="lab">Say</span><span class="val">When it's empty, pull this pin and the whole rack folds right up against the car — so you're never giving up parking space or garage room.</span></div>
+          <div class="row say" data-show="tilt"><span class="lab">Say</span><span class="val">Tilt function — one tap and I can get into the trunk even with the bikes loaded.</span></div>
+          <div class="row"><span class="lab">Sound</span><span class="val"><em>Keep the pin-pull and folding-clunk sounds.</em></span></div>
+        </div>
+        <div class="frames" data-show="tilt"><div class="cap">// Reference frames — arrive &amp; tilt</div><img src="imgs/step10_tilt.jpg" alt="Tilt access reference frames" loading="lazy"></div>
+        <div class="frames" data-show="notilt"><div class="cap">// Reference frames — arrive &amp; unload</div><img src="imgs/step10_notilt.jpg" alt="Unload reference frames" loading="lazy"></div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc">09:40–10:10</span><span class="st">STEP 10</span><h3>Ride the adventure</h3><span class="flag o">Recommended</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">No cut between unloading and riding — roll off and straight into the ride. Scenic setting: a park, a lake, the coast. Relaxed, cozy atmosphere.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">This is the whole reason you buy an e-bike rack — adventure, anywhere, anytime. Now let's just enjoy the ride.</span></div>
+        </div>
+        <div class="frames"><div class="cap">// Reference frames — STEP 10</div><img src="imgs/step11.jpg" alt="Riding reference frames" loading="lazy"></div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">10:10–end</span><span class="st">STEP 11</span><h3>Honest wrap + CTA</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">On camera, in a natural scenic spot — no script in hand. Give a genuine, casual summary of your day with it. On screen, show the purchase link, discount code, and a nudge to like &amp; subscribe.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">Honest review after a full day: install was easier than I expected,<span data-show="ramp"> the ramp is the most practical I've used at this price,</span> and nothing budged the whole road test. Link and a discount are below — if this helped, like and subscribe. See you next time.</span></div>
+        </div>
+        <div class="frames"><div class="cap">// Reference frames — STEP 11</div><img src="imgs/step12.jpg" alt="Summary reference frames" loading="lazy"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 04 TALKING POINTS ============ -->
+  <section id="say">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Talking points — say them your way</h2></div>
+    <p class="sec-sub">Grab-and-go lines for when you're not sure what to say. Put them in your own words on camera — <b>don't read them aloud</b>. Every claim here is true and safe to make.</p>
+    <div class="lines">
+      <div class="line"><span class="who">Capacity</span>Rated to <span data-field="cap">200</span> pounds total, so it actually handles a heavy fat-tire e-bike — not just a road bike.</div>
+      <div class="line" data-show="ramp"><span class="who">Ramp</span>The built-in ramp means you roll the bike up instead of dead-lifting it onto a rack.</div>
+      <div class="line"><span class="who">Weight</span>It's aluminum — about a third the weight of a steel rack — so getting it on and off the car isn't a workout.</div>
+      <div class="line"><span class="who">Security</span>Ratcheting straps fit any wheelbase and the cradle wraps the tire, so nothing rubs or scratches your frame.</div>
+      <div class="line"><span class="who">Stability</span>The anti-wobble fit keeps it tight to the hitch — I shook it loaded and it didn't move.</div>
+      <div class="line" data-show="multibike"><span class="who">Multi-bike</span>Adjustable arms hold the bikes apart with a built-in safety gap, so they never bang into each other.</div>
+      <div class="line" data-show="fold"><span class="who">Folding</span>Empty, it folds flat against the car — no wasted garage or parking space.</div>
+      <div class="line" data-show="tilt"><span class="who">Tilt</span>It tilts back so you can reach the trunk even with the bikes loaded.</div>
+      <div class="line"><span class="who">Fit</span>Drops onto any standard 2-inch hitch — cars, trucks, SUVs, RVs — with a 1.25-inch adaptor available.</div>
+    </div>
+  </section>
+
+  <!-- ============ 05 DELIVERY ============ -->
+  <section id="deliver">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Delivery &amp; the don'ts</h2></div>
+    <div class="two">
+      <div class="panel go"><h4>Do / deliver</h4><ul>
+        <li>Shoot in <b>4K</b> with clean, clear audio.</li>
+        <li>Keep it <b>≥ 10 minutes</b> and mostly outdoors.</li>
+        <li><b>Send us the preview first</b> — publish only once approved.</li>
+        <li>Upload within <b>10 days</b> of receiving the product.</li>
+        <li>Add the product link + <code style="font-family:var(--mono);font-size:13px">#OUTFITR #EbikeRack</code>.</li>
+        <li>Be objective — the honest, real-world review is what viewers trust.</li>
+      </ul></div>
+      <div class="panel no"><h4>Don't</h4><ul>
+        <li>Don't read from a script or notes on camera.</li>
+        <li>Don't publish before we've approved the preview.</li>
+        <li>Don't make false or misleading claims — no wrong install or made-up specs.</li>
+        <li>Don't deliberately discredit the brand (fair criticism is welcome).</li>
+        <li>No political, war, religious, adult, or otherwise controversial content.</li>
+      </ul></div>
+    </div>
+    <p class="note">// Questions on any step? Reply to the person who sent you this brief before you shoot — a 30-second question beats a full reshoot.</p>
+  </section>
+
+  </div><!-- /wrap -->
+</main>
+
+<footer><div class="wrap">
+  <span><b>OUTFITR</b> · <b>Young Electric</b> · <span data-field="name">2-Bike Hitch E-bike Rack with Ramp</span> · Model <span data-field="model">4148</span></span>
+  <span>Creator Shooting Brief · Universal Rack v3</span>
+</div></footer>
+
+<script>
+const YG_HOME = "https://youngelectricbikes.com/";
+/* flags drive which steps/specs/badges show. youngUrl empty → falls back to YG_HOME. */
+const PRODUCTS = {
+  "4148": {name:"2-Bike Hitch E-Bike Rack with Ramp, Foldable", cap:200, bikes:2, ramp:true,  fold:true,  tilt:false, fatTire:true, style:"platform",   url:"https://outfitrer.com/products/2-bike-hitch-rack-fat-tire-ebike-carrier-with-ramp-folding-200-lbs-capacity", youngUrl:"https://youngelectricbikes.com/collections/sale/products/2-bike-hitch-e-bike-rack-with-ramp-fat-tire-electric-bike-carrier-200-lbs-capacity-fits-2-receiver"},
+  "4155": {name:"2-Bike Hitch Electric Bike Rack with Ramp, Folding Fat Tire Carrier", cap:200, bikes:2, ramp:true, fold:true, tilt:true, fatTire:true, style:"platform", url:"https://outfitrer.com/products/2-bike-hitch-electric-bike-rack-with-ramp-folding-fat-tire-e-bike-carrier-200-lbs-capacity-fits-2-receiver-1", youngUrl:"https://youngelectricbikes.com/collections/sale/products/2-bike-hitch-electric-bike-rack-with-ramp-folding-fat-tire-e-bike-carrier-200-lbs-capacity-fits-2-receiver"},
+  "4197": {name:"2-Bike Hitch E-Bike Rack with Ramp, Easy Fold & Tilt", cap:200, bikes:2, ramp:true, fold:true, tilt:true, fatTire:true, style:"tire-clamp", url:"https://outfitrer.com/products/2-bike-hitch-e-bike-rack-easy-fold-and-tilt-heavy-duty-with-ramp", youngUrl:"https://youngelectricbikes.com/products/2-bike-hitch-electric-bike-rack-folding-fat-tire-e-bike-carrier-200-lbs-capacity-fits-2-receiver-with-ramp"},
+  "4118": {name:"2-Bike Hitch E-Bike Rack, Easy Fold and Tilt, Heavy Duty", cap:200, bikes:2, ramp:false, fold:true, tilt:true, fatTire:true, style:"tire-clamp", url:"https://outfitrer.com/products/hitch-e-bike-rack-fits-2-receiver-200-lbs-capacity-for-cars-trucks-suvs-minivans-rv", youngUrl:"https://youngelectricbikes.com/collections/sale/products/2-bike-hitch-electric-bike-rack-folding-fat-tire-e-bike-carrier-200-lbs-capacity-fits-2-receiver"},
+  "4095": {name:"2-Bike Rack, Foldable and Tiltable", cap:200, bikes:2, ramp:false, fold:true, tilt:true, fatTire:true, style:"hanging-arm", url:"https://outfitrer.com/products/foldable-2-bike-hitch-rack-platform-style-2-receiver-200-lbs-capacity", youngUrl:"https://youngelectricbikes.com/collections/sale/products/2-bike-hitch-bike-rack-folding-fat-tire-bike-carrier-200-lbs-2-receiver"},
+  "4186": {name:"Tire-Clamp 2-Bike E-bike Rack with Ramp", cap:200, bikes:2, ramp:true, fold:true, tilt:false, fatTire:true, style:"tire-clamp", url:"https://outfitrer.com/products/200lbs-capacity-tire-clamp-e-bike-rack-with-ramp", youngUrl:"https://youngelectricbikes.com/collections/sale/products/200lbs-capacity-tire-clamp-e-bike-rack-with-ramp"},
+  "4190": {name:"Camo 2-Bike Hitch E-Bike Rack with Ramp", cap:200, bikes:2, ramp:true, fold:true, tilt:false, fatTire:true, style:"platform", url:"https://outfitrer.com/products/2-bike-hitch-e-bike-rack-with-ramp-foldable-camo", youngUrl:"https://youngelectricbikes.com/collections/sale/products/camo-2-bike-hitch-e-bike-rack-with-ramp-fat-tire-electric-bike-carrier-200-lbs-capacity-fits-2-camo"},
+  "4157": {name:"Single Hitch E-Bike Rack with Ramp, Foldable", cap:100, bikes:1, ramp:true, fold:true, tilt:false, fatTire:true, style:"platform", url:"https://outfitrer.com/products/1-bike-hitch-e-bike-rack-with-ramp-folding-single-electric-bike-carrier-100-lbs-capacity-fits-2-receiver", youngUrl:"https://youngelectricbikes.com/collections/sale/products/1-bike-hitch-e-bike-rack-with-ramp-folding-single-electric-bike-carrier-100-lbs-capacity-fits-2-receiver"},
+  "4149": {name:"Single Hitch E-Bike Rack with Ramp", cap:100, bikes:1, ramp:true, fold:false, tilt:false, fatTire:true, style:"platform", url:"https://outfitrer.com/products/1-bike-hitch-rack-with-ramp-lightweight-bike-carrier-100-lbs-capacity-fits-2-receiver", youngUrl:"https://youngelectricbikes.com/collections/sale/products/1-bike-hitch-e-bike-rack-with-ramp-lightweight-single-electric-bike-carrier-100-lbs-capacity-fits-2-receiver"},
+  "4156": {name:"3-Bike Hitch E-Bike Rack with Ramp, Foldable", cap:250, bikes:3, ramp:true, fold:true, tilt:true, fatTire:true, style:"platform", url:"https://outfitrer.com/products/3-bike-hitch-e-bike-rack-with-ramp-fat-tire-electric-bike-carrier-250-lbs-capacity-fits-2-receiver", youngUrl:"https://youngelectricbikes.com/collections/sale/products/3-bike-hitch-e-bike-rack-with-ramp-fat-tire-electric-bike-carrier-250-lbs-capacity-fits-2-receiver"},
+  "4209": {name:"Etrike Hitch Rack, Adjustable Carrier for Adult Electric Trikes", cap:200, bikes:1, ramp:true, fold:true, tilt:false, fatTire:true, style:"etrike", url:"https://outfitrer.com/collections/savings/products/etrike-hitch-rack-200lbs-capacity-2-receiver-adjustable-carrier-for-adult-electric-fat-tir", youngUrl:"https://youngelectricbikes.com/collections/sale/products/200lbs-hitch-mount-trike-rack-with-2-receiver-adjustable-carrier-for-adult-electric-fat-tire-folding-tricycles-fits-cars-suvs-trucks-rvs"},
+};
+const ORDER = ["4148","4155","4197","4118","4095","4186","4190","4157","4149","4156","4209"];
+
+function headline(p){
+  const n = p.bikes===1?"1-Bike":p.bikes===3?"3-Bike":"2-Bike";
+  const ft = p.fatTire ? "Fat-Tire " : "";
+  return `${n} Hitch ${ft}E-bike Rack${p.ramp?' <span class="r">with Ramp</span>':''}`;
+}
+function shortlabel(p){
+  return [p.bikes+"-bike", p.ramp?"ramp":"no-ramp", p.fold?"fold":"fixed", p.tilt?"tilt":null].filter(Boolean).join(" · ")+"\n"+p.cap+" lb";
+}
+
+function apply(sku){
+  const p = PRODUCTS[sku]; if(!p) return;
+  document.querySelectorAll('[data-field]').forEach(el=>{
+    const k = el.getAttribute('data-field');
+    if(k==='model') el.textContent = sku;
+    else if(k==='name') el.textContent = p.name;
+    else if(k==='cap') el.textContent = p.cap;
+    else if(k==='bikes') el.textContent = p.bikes;
+    else if(k==='brandsay') el.textContent = 'OUTFITR / Young Electric';
+    else if(k==='headline') el.innerHTML = headline(p);
+    else if(k==='url') el.setAttribute('href', p.url);
+    else if(k==='youngUrl') el.setAttribute('href', p.youngUrl || YG_HOME);
+  });
+  const cond = { ramp:p.ramp, noramp:!p.ramp, fold:p.fold, nofold:!p.fold, tilt:p.tilt, notilt:!p.tilt,
+    multibike:p.bikes>=2, onebike:p.bikes===1, threebike:p.bikes===3, fatTire:p.fatTire,
+    platform:p.style==='platform', tireclamp:p.style==='tire-clamp' };
+  document.querySelectorAll('[data-show]').forEach(el=>{ el.hidden = !cond[el.getAttribute('data-show')]; });
+  document.querySelectorAll('.pcard').forEach(c=> c.classList.toggle('selected', c.dataset.sku===sku));
+  document.title = `${sku} · ${p.name} — Creator Shooting Brief`;
+}
+
+(function(){
+  const grid = document.getElementById('grid');
+  for(const sku of ORDER){
+    const p = PRODUCTS[sku]; if(!p) continue;
+    const b = document.createElement('button');
+    b.className='pcard'; b.dataset.sku=sku; b.type='button';
+    b.innerHTML = `<span class="ph" data-num="${sku}"><img src="imgs/products/${sku}.jpg" alt="${sku}" loading="lazy"
+        onerror="this.closest('.pcard').classList.add('noimg')"></span>
+      <span class="pn"><span class="dot"></span>${sku}</span>
+      <span class="pl">${shortlabel(p).replace('\\n','<br>')}</span>`;
+    b.addEventListener('click', ()=>apply(sku));
+    grid.appendChild(b);
+  }
+  const start = (new URLSearchParams(location.search).get('model')||'').trim();
+  apply(PRODUCTS[start] ? start : "4148");
+})();
+</script>
+</body>
+</html>
