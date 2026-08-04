@@ -62,9 +62,9 @@
   .kicker{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:12px}
   .kicker .tag{font-family:var(--mono); font-size:15px; letter-spacing:.08em; text-transform:uppercase; color:#0f1712; background:var(--blaze); padding:6px 11px; border-radius:2px; font-weight:700}
   .kicker .model{font-family:var(--mono); font-size:15px; letter-spacing:.08em; color:#9FB4A5; text-transform:uppercase}
-  header.hero h1{font-size:clamp(28px,5vw,46px); line-height:1.08; font-weight:800; letter-spacing:-.02em; margin:0 0 13px}
+  header.hero h1{width:min(1040px,calc(100vw - 64px)); font-size:clamp(28px,5vw,46px); line-height:1.08; font-weight:800; letter-spacing:-.02em; margin:0 0 13px}
   header.hero h1 .r{color:var(--blaze)}
-  header.hero .lede{font-size:clamp(20px,2.1vw,23px); color:#C9D6CC; max-width:58ch; line-height:1.65}
+  header.hero .lede{width:min(1040px,calc(100vw - 64px)); max-width:none; font-size:clamp(20px,2.1vw,23px); color:#C9D6CC; line-height:1.65}
   header.hero .lede b{color:#fff}
   .metastrip{display:grid; grid-template-columns:repeat(auto-fit,minmax(108px,1fr)); gap:1px; background:var(--line-dark); border:1px solid var(--line-dark); margin-top:22px; border-radius:4px; overflow:hidden}
   .metastrip div{background:var(--pine-2); padding:9px 12px}
@@ -76,7 +76,7 @@
   .image-deliverable p{font-size:17px; line-height:1.5; color:var(--moss-ink)}
   .image-deliverable a{font-family:var(--mono); font-size:16px; font-weight:700; text-decoration:none; color:#fff; background:var(--pine); border-radius:4px; padding:10px 13px; white-space:nowrap}
   .image-deliverable a:hover{background:var(--blaze-deep)}
-  @media(max-width:720px){.image-deliverable{grid-template-columns:48px 1fr}.image-deliverable .count{width:42px;height:42px}.image-deliverable a{grid-column:1/-1;text-align:center}}
+  @media(max-width:720px){nav.bar .brand{white-space:normal;line-height:1.35}header.hero h1,header.hero .lede{width:100%}.image-deliverable{grid-template-columns:48px 1fr}.image-deliverable .count{width:42px;height:42px}.image-deliverable a{grid-column:1/-1;text-align:center}}
 
   section{padding:40px 0; border-top:1px solid var(--line); scroll-margin-top:74px}
   .sec-head{display:flex; align-items:baseline; gap:13px; margin-bottom:6px}
