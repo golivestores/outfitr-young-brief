@@ -3,85 +3,119 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OUTFITR / Young Electric — Creator Shooting Brief</title>
+<title>OUTFITR / Young Electric / Polestar — Creator Shooting Brief</title>
 <style>
+  @font-face{
+    font-family:"Barlow";
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url("fonts/barlow-500.woff2") format("woff2");
+  }
+  @font-face{
+    font-family:"Barlow";
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url("fonts/barlow-700.woff2") format("woff2");
+  }
+  @font-face{
+    font-family:"Figtree";
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url("fonts/figtree-800.woff2") format("woff2");
+  }
   :root{
     --paper:#F4F5F1; --ink:#18211C; --pine:#1F2D27; --pine-2:#26362E;
     --moss:#5F7A64; --moss-ink:#3C4F42; --blaze:#DA5A2A; --blaze-deep:#B8471F;
     --steel:#2C4A55; --kraft:#EAE3D3; --line:#D5D9CF; --line-dark:#3A4A41; --paper-dim:#ECEEE7;
-    --sans:"Helvetica Neue",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-    --mono:ui-monospace,"SF Mono","SFMono-Regular",Menlo,Consolas,"Liberation Mono",monospace;
+    --sans:"Barlow",sans-serif;
+    --mono:"Barlow",sans-serif;
+    --heading:"Figtree",sans-serif;
     --wrap:940px;
   }
   *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
-  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:74px}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:20px; font-weight:500; line-height:1.7; -webkit-font-smoothing:antialiased}
   .wrap{max-width:var(--wrap); margin:0 auto; padding:0 22px}
   a{color:var(--blaze-deep); text-underline-offset:2px}
-  h1,h2,h3{text-wrap:balance; margin:0}
+  h1,h2,h3{font-family:var(--heading); text-wrap:balance; margin:0}
   p{margin:0}
   [hidden]{display:none !important}
-  .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--moss); font-weight:600}
+  .eyebrow{font-family:var(--mono); font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:var(--moss); font-weight:600}
 
   /* sticky bar */
   nav.bar{position:sticky; top:0; z-index:30; background:rgba(31,45,39,.97); backdrop-filter:saturate(1.4) blur(6px); border-bottom:1px solid var(--line-dark)}
   nav.bar .wrap{display:flex; align-items:center; gap:12px; min-height:50px; flex-wrap:wrap; padding-top:7px; padding-bottom:7px}
-  nav.bar .brand{font-family:var(--mono); font-size:12px; letter-spacing:.13em; color:#EDEFEA; font-weight:700; text-transform:uppercase; white-space:nowrap}
-  nav.bar .cur{font-family:var(--mono); font-size:12px; color:#9FB4A5; margin-left:auto; display:flex; align-items:center; gap:8px}
-  nav.bar .cur b{color:#EDEFEA}
-  nav.bar .cur a{font-family:var(--mono); color:var(--blaze); text-decoration:none; border:1px solid var(--blaze); border-radius:4px; padding:3px 8px; font-size:11px; white-space:nowrap}
+  nav.bar .brand{font-family:var(--mono); font-size:15px; letter-spacing:.08em; color:#EDEFEA; font-weight:700; text-transform:uppercase; white-space:nowrap}
+  nav.bar .cur{font-family:var(--mono); font-size:15px; color:#9FB4A5; margin-left:auto; display:flex; align-items:center; gap:8px}
+  nav.bar .reviewing-highlight{display:inline-flex; align-items:center; gap:7px; color:#111A14; background:#E8FF3F; padding:5px 10px 6px; border-radius:4px; font-weight:700; box-shadow:0 0 0 1px rgba(232,255,63,.35),0 0 16px rgba(232,255,63,.24)}
+  nav.bar .reviewing-highlight b{color:#111A14; font-weight:700}
+  nav.bar .cur a{font-family:var(--mono); color:#172019; background:#fff; text-decoration:none; border:1px solid #fff; border-radius:4px; padding:5px 11px; font-size:15px; font-weight:700; white-space:nowrap; box-shadow:0 2px 9px rgba(0,0,0,.22); transition:background .15s,color .15s,transform .15s,box-shadow .15s}
+  nav.bar .cur a:hover{color:#111A14; background:#F4F5F1; transform:translateY(-1px); box-shadow:0 4px 12px rgba(0,0,0,.28)}
 
   /* masthead */
   header.hero{background:var(--pine); color:#EDEFEA; padding:34px 0 28px; position:relative; overflow:hidden}
   header.hero::after{content:""; position:absolute; inset:0; background:repeating-linear-gradient(90deg,transparent 0 39px,rgba(255,255,255,.03) 39px 40px),repeating-linear-gradient(0deg,transparent 0 39px,rgba(255,255,255,.03) 39px 40px); pointer-events:none}
   header.hero .wrap{position:relative; z-index:1}
   .kicker{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:12px}
-  .kicker .tag{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#0f1712; background:var(--blaze); padding:4px 9px; border-radius:2px; font-weight:700}
-  .kicker .model{font-family:var(--mono); font-size:12px; letter-spacing:.13em; color:#9FB4A5; text-transform:uppercase}
-  header.hero h1{font-size:clamp(26px,5vw,42px); line-height:1.04; font-weight:800; letter-spacing:-.02em; margin:0 0 11px}
+  .kicker .tag{font-family:var(--mono); font-size:15px; letter-spacing:.08em; text-transform:uppercase; color:#0f1712; background:var(--blaze); padding:6px 11px; border-radius:2px; font-weight:700}
+  .kicker .model{font-family:var(--mono); font-size:15px; letter-spacing:.08em; color:#9FB4A5; text-transform:uppercase}
+  header.hero h1{font-size:clamp(28px,5vw,46px); line-height:1.08; font-weight:800; letter-spacing:-.02em; margin:0 0 13px}
   header.hero h1 .r{color:var(--blaze)}
-  header.hero .lede{font-size:clamp(15px,2.1vw,18px); color:#C9D6CC; max-width:58ch; line-height:1.5}
+  header.hero .lede{font-size:clamp(20px,2.1vw,23px); color:#C9D6CC; max-width:58ch; line-height:1.65}
   header.hero .lede b{color:#fff}
   .metastrip{display:grid; grid-template-columns:repeat(auto-fit,minmax(108px,1fr)); gap:1px; background:var(--line-dark); border:1px solid var(--line-dark); margin-top:22px; border-radius:4px; overflow:hidden}
   .metastrip div{background:var(--pine-2); padding:9px 12px}
-  .metastrip dt{font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#8AA091}
-  .metastrip dd{margin:3px 0 0; font-family:var(--mono); font-size:13px; color:#EDEFEA; font-weight:600}
+  .metastrip dt{font-family:var(--mono); font-size:15px; letter-spacing:.05em; text-transform:uppercase; color:#9FB4A5}
+  .metastrip dd{margin:3px 0 0; font-family:var(--mono); font-size:16px; color:#EDEFEA; font-weight:700}
+  .image-deliverable{margin-top:16px; display:grid; grid-template-columns:58px minmax(0,1fr) auto; gap:15px; align-items:center; background:#fff; color:var(--ink); border-left:5px solid var(--blaze); border-radius:5px; padding:15px 17px; box-shadow:0 7px 22px rgba(0,0,0,.16)}
+  .image-deliverable .count{width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--blaze); color:#fff; font-family:var(--heading); font-size:21px; font-weight:800}
+  .image-deliverable h3{font-size:19px; line-height:1.25; margin:0 0 4px}
+  .image-deliverable p{font-size:17px; line-height:1.5; color:var(--moss-ink)}
+  .image-deliverable a{font-family:var(--mono); font-size:16px; font-weight:700; text-decoration:none; color:#fff; background:var(--pine); border-radius:4px; padding:10px 13px; white-space:nowrap}
+  .image-deliverable a:hover{background:var(--blaze-deep)}
+  @media(max-width:720px){.image-deliverable{grid-template-columns:48px 1fr}.image-deliverable .count{width:42px;height:42px}.image-deliverable a{grid-column:1/-1;text-align:center}}
 
-  section{padding:40px 0; border-top:1px solid var(--line)}
+  section{padding:40px 0; border-top:1px solid var(--line); scroll-margin-top:74px}
   .sec-head{display:flex; align-items:baseline; gap:13px; margin-bottom:6px}
-  .sec-num{font-family:var(--mono); font-size:13px; color:var(--blaze); font-weight:700}
-  h2{font-size:clamp(20px,3.3vw,27px); font-weight:800; letter-spacing:-.015em; line-height:1.1}
-  .sec-sub{color:var(--moss-ink); max-width:64ch; margin:11px 0 22px; font-size:15px}
+  .sec-num{font-family:var(--mono); font-size:16px; color:var(--blaze); font-weight:700}
+  h2{font-size:clamp(25px,3.3vw,32px); font-weight:800; letter-spacing:-.015em; line-height:1.2}
+  .sec-sub{color:var(--moss-ink); max-width:64ch; margin:12px 0 24px; font-size:19px; line-height:1.65}
 
   /* ===== product picker (prominent) ===== */
   #pick{background:linear-gradient(180deg,#EEF0EB, var(--paper)); border-top:none}
-  .prod-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:13px}
+  .prod-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(168px,1fr)); gap:14px}
   .pcard{border:2px solid var(--line); border-radius:10px; background:#fff; padding:9px; cursor:pointer; display:flex; flex-direction:column; gap:7px; text-align:left; font:inherit; transition:border-color .15s, transform .15s, box-shadow .15s}
   .pcard:hover{border-color:var(--moss); transform:translateY(-2px)}
   .pcard.selected{border-color:var(--blaze); box-shadow:0 0 0 2px rgba(218,90,42,.25)}
   .pcard .ph{aspect-ratio:4/3; border-radius:6px; overflow:hidden; background:var(--paper-dim); position:relative; display:flex; align-items:center; justify-content:center}
   .pcard .ph img{width:100%; height:100%; object-fit:cover; display:block}
+  .pcard.jack .ph{background:#fff}
+  .pcard.jack .ph img{object-fit:contain; padding:5px}
   .pcard .ph::after{content:attr(data-num); position:absolute; font-family:var(--mono); font-weight:700; font-size:24px; color:var(--moss); opacity:0}
   .pcard.noimg .ph img{display:none}
   .pcard.noimg .ph::after{opacity:1}
-  .pcard .pn{font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); display:flex; align-items:center; gap:6px}
+  .pcard .pn{font-family:var(--mono); font-weight:700; font-size:18px; color:var(--ink); display:flex; align-items:center; gap:6px}
   .pcard .pn .dot{width:7px; height:7px; border-radius:50%; background:var(--line); flex:0 0 auto}
   .pcard.selected .pn{color:var(--blaze-deep)} .pcard.selected .pn .dot{background:var(--blaze)}
-  .pcard .pl{font-family:var(--mono); font-size:10.5px; color:var(--moss); letter-spacing:.02em; line-height:1.35}
+  .pcard .pl{font-family:var(--mono); font-size:15px; color:var(--moss-ink); letter-spacing:0; line-height:1.55}
 
   /* ===== product ===== */
-  .prod-line{background:var(--kraft); border:1px solid #DBD3BF; border-radius:6px; padding:15px 19px; margin-bottom:18px; font-size:15.5px}
+  .prod-line{background:var(--kraft); border:1px solid #DBD3BF; border-radius:6px; padding:17px 21px; margin-bottom:20px; font-size:19px; line-height:1.65}
   .prod-line b{color:var(--ink)}
   /* highlight badges */
   .badges{display:flex; flex-wrap:wrap; gap:9px; margin:0 0 20px}
-  .badge{font-family:var(--mono); font-size:13px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:9px 14px; border-radius:6px; display:inline-flex; align-items:center; gap:6px; color:#fff; background:var(--blaze)}
+  .badge{font-family:var(--mono); font-size:16px; font-weight:700; letter-spacing:.03em; text-transform:uppercase; padding:11px 16px; border-radius:6px; display:inline-flex; align-items:center; gap:6px; color:#fff; background:var(--blaze)}
   .badge b{font-size:18px; letter-spacing:0}
   .badge.dark{background:var(--pine)}
   /* brand link block */
   .brands{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:0 0 24px}
+  .brands.single{grid-template-columns:1fr}
   @media(max-width:560px){ .brands{grid-template-columns:1fr} }
   .brandbtn{display:flex; flex-direction:column; gap:2px; text-decoration:none; border-radius:9px; padding:14px 18px; border:1px solid transparent}
-  .brandbtn .bl{font-family:var(--mono); font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; opacity:.8}
+  .brandbtn .bl{font-family:var(--mono); font-size:15px; letter-spacing:.05em; text-transform:uppercase; opacity:.9}
   .brandbtn .bn{font-size:19px; font-weight:800; letter-spacing:-.01em; display:flex; align-items:center; gap:7px}
   .brandbtn.of{background:var(--pine); color:#EDEFEA}
   .brandbtn.of .bn{color:#fff}
@@ -91,65 +125,68 @@
   .brandbtn .arw{color:var(--blaze); font-weight:700}
 
   .specs{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden}
+  .specs.jack-specs{grid-template-columns:repeat(3,minmax(0,1fr))}
   .spec{background:var(--paper); padding:14px 16px}
-  .spec .n{font-family:var(--mono); font-size:11px; color:var(--moss); letter-spacing:.08em}
-  .spec h4{margin:4px 0 4px; font-size:15px; font-weight:700; letter-spacing:-.01em}
+  .spec .n{font-family:var(--mono); font-size:15px; color:var(--moss); letter-spacing:.03em}
+  .spec h4{margin:4px 0 5px; font-size:19px; font-weight:700; letter-spacing:-.01em}
   .spec h4 em{font-style:normal; color:var(--blaze-deep)}
-  .spec p{font-size:13px; color:var(--moss-ink); line-height:1.42}
+  .spec p{font-size:17px; color:var(--moss-ink); line-height:1.6}
+  @media(max-width:700px){.specs.jack-specs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:480px){.specs.jack-specs{grid-template-columns:1fr}}
 
   /* must-haves */
   .must{border:1.5px solid var(--blaze); border-radius:7px; overflow:hidden; background:#fff}
   .must .top{background:var(--blaze); color:#fff; padding:12px 20px; display:flex; align-items:center; gap:12px; flex-wrap:wrap}
-  .must .top strong{font-size:16px} .must .top span{font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; background:rgba(0,0,0,.22); padding:3px 8px; border-radius:3px}
-  .must .grp{padding:15px 20px 5px; border-top:1px solid var(--line)} .must .grp:first-of-type{border-top:none}
-  .must .grp h4{font-family:var(--mono); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--moss); margin:0 0 10px}
-  ul.check{list-style:none; margin:0 0 11px; padding:0; display:flex; flex-direction:column; gap:9px}
-  ul.check li{display:flex; gap:11px; align-items:flex-start; font-size:14.5px; line-height:1.42}
-  ul.check li::before{content:"\2713"; font-family:var(--mono); font-weight:700; color:var(--blaze); border:1.5px solid var(--blaze); border-radius:3px; width:20px; height:20px; flex:0 0 20px; display:flex; align-items:center; justify-content:center; font-size:12px; margin-top:1px}
-  ul.check li code{font-family:var(--mono); font-size:13px; background:var(--paper-dim); padding:1px 6px; border-radius:3px; color:var(--ink)}
+  .must .top strong{font-size:20px} .must .top span{font-family:var(--mono); font-size:15px; letter-spacing:.03em; background:rgba(0,0,0,.22); padding:5px 10px; border-radius:3px}
+  .must .grp{padding:18px 22px 9px; border-top:1px solid var(--line)} .must .grp:first-of-type{border-top:none}
+  .must .grp h4{font-family:var(--mono); font-size:15px; letter-spacing:.07em; text-transform:uppercase; color:var(--moss); margin:0 0 11px}
+  ul.check{list-style:none; margin:0 0 13px; padding:0; display:flex; flex-direction:column; gap:12px}
+  ul.check li{position:relative; display:block; padding-left:34px; font-size:18px; line-height:1.65; overflow-wrap:break-word}
+  ul.check li::before{content:"\2713"; position:absolute; left:0; top:.22em; font-family:var(--mono); font-weight:700; color:var(--blaze); border:1.5px solid var(--blaze); border-radius:3px; width:22px; height:22px; display:flex; align-items:center; justify-content:center; font-size:13px; line-height:1; margin:0}
+  ul.check li code{font-family:var(--mono); font-size:16px; background:var(--paper-dim); padding:2px 7px; border-radius:3px; color:var(--ink)}
 
   .rule{background:var(--pine); color:#EDEFEA; border-radius:7px; padding:22px 24px; display:flex; gap:16px; align-items:flex-start}
   .rule .mk{font-family:var(--mono); font-size:30px; line-height:.8; color:var(--blaze); font-weight:700}
-  .rule h3{font-size:17px; margin:0 0 6px; color:#fff} .rule p{color:#C4D2C8; font-size:14.5px; max-width:64ch} .rule b{color:#fff}
+  .rule h3{font-size:22px; margin:0 0 7px; color:#fff} .rule p{color:#C4D2C8; font-size:18px; line-height:1.6; max-width:64ch} .rule b{color:#fff}
 
   /* shot cards */
   .shots{display:flex; flex-direction:column; gap:16px}
   .shot{border:1px solid var(--line); border-radius:8px; background:#fff; overflow:hidden}
   .shot > .hd{display:flex; align-items:center; gap:13px; padding:13px 18px; background:var(--paper); border-bottom:1px solid var(--line); flex-wrap:wrap}
-  .shot .tc{font-family:var(--mono); font-size:12px; font-weight:700; color:#fff; background:var(--moss-ink); padding:4px 9px; border-radius:3px; white-space:nowrap}
+  .shot .tc{font-family:var(--mono); font-size:15px; font-weight:700; color:#fff; background:var(--moss-ink); padding:6px 11px; border-radius:3px; white-space:nowrap}
   .shot .tc.req{background:var(--blaze)}
-  .shot .st{font-family:var(--mono); font-size:11px; color:var(--moss); letter-spacing:.09em}
-  .shot .hd h3{font-size:17px; font-weight:700; letter-spacing:-.01em; flex:1 1 auto; min-width:170px}
-  .shot .flag{font-family:var(--mono); font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; padding:3px 8px; border-radius:3px}
+  .shot .st{font-family:var(--mono); font-size:15px; color:var(--moss); letter-spacing:.03em}
+  .shot .hd h3{font-size:22px; font-weight:700; letter-spacing:-.01em; flex:1 1 auto; min-width:180px}
+  .shot .flag{font-family:var(--mono); font-size:15px; letter-spacing:.03em; text-transform:uppercase; padding:5px 10px; border-radius:3px}
   .shot .flag.r{color:var(--blaze-deep); border:1px solid var(--blaze)} .shot .flag.o{color:var(--moss); border:1px solid var(--line)}
   .shot .bd{padding:16px 18px; display:flex; flex-direction:column; gap:10px}
   .row{display:grid; grid-template-columns:76px 1fr; gap:13px; align-items:start}
-  .row .lab{font-family:var(--mono); font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--moss); padding-top:2px}
-  .row .val{font-size:14.5px; line-height:1.5} .row .val em{font-style:normal; color:var(--moss-ink)}
+  .row .lab{font-family:var(--mono); font-size:15px; letter-spacing:.03em; text-transform:uppercase; color:var(--moss); padding-top:2px}
+  .row .val{min-width:0; font-size:18px; line-height:1.65; overflow-wrap:break-word} .row .val em{font-style:normal; color:var(--moss-ink)}
   .row.say .val{background:var(--paper-dim); border-left:3px solid var(--moss); padding:8px 12px; border-radius:0 4px 4px 0}
   .row.say .val::before{content:"\201C"} .row.say .val::after{content:"\201D"}
   .row.tip .val{color:var(--blaze-deep)}
   @media(max-width:520px){ .row{grid-template-columns:1fr; gap:3px} }
   /* bigger reference frames */
   .frames{border-top:1px dashed var(--line); padding:14px 12px 14px; background:#FBFBF9}
-  .frames .cap{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--moss); margin:0 6px 9px}
+  .frames .cap{font-family:var(--mono); font-size:15px; letter-spacing:.03em; text-transform:uppercase; color:var(--moss); margin:0 6px 10px}
   .frames img{width:100%; display:block; border-radius:6px; border:1px solid var(--line)}
 
   .lines{display:flex; flex-direction:column; gap:9px}
-  .line{background:#fff; border:1px solid var(--line); border-left:3px solid var(--moss); border-radius:0 5px 5px 0; padding:11px 15px; font-size:14.5px; line-height:1.5}
-  .line .who{font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--moss); display:block; margin-bottom:3px}
+  .line{background:#fff; border:1px solid var(--line); border-left:3px solid var(--moss); border-radius:0 5px 5px 0; padding:13px 17px; font-size:18px; line-height:1.65}
+  .line .who{font-family:var(--mono); font-size:15px; letter-spacing:.03em; text-transform:uppercase; color:var(--moss); display:block; margin-bottom:4px}
 
   .two{display:grid; grid-template-columns:1fr 1fr; gap:15px} @media(max-width:640px){ .two{grid-template-columns:1fr} }
   .panel{border:1px solid var(--line); border-radius:7px; padding:17px 19px; background:#fff}
-  .panel h4{font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; margin:0 0 12px}
+  .panel h4{font-family:var(--mono); font-size:15px; letter-spacing:.06em; text-transform:uppercase; margin:0 0 13px}
   .panel.go h4{color:var(--moss-ink)} .panel.no h4{color:var(--blaze-deep)}
-  .panel ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px}
-  .panel li{font-size:14px; line-height:1.45; display:flex; gap:10px; align-items:flex-start}
-  .panel.go li::before{content:"\2192"; font-family:var(--mono); color:var(--moss); font-weight:700}
-  .panel.no li::before{content:"\00D7"; font-family:var(--mono); color:var(--blaze); font-weight:700; font-size:17px; line-height:1.1}
-  .note{font-size:13px; color:var(--moss); font-family:var(--mono); margin-top:11px}
+  .panel ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px}
+  .panel li{position:relative; display:block; padding-left:28px; font-size:18px; line-height:1.65; overflow-wrap:break-word}
+  .panel.go li::before{content:"\2192"; position:absolute; left:0; top:.03em; font-family:var(--mono); color:var(--moss); font-weight:700}
+  .panel.no li::before{content:"\00D7"; position:absolute; left:1px; top:.04em; font-family:var(--mono); color:var(--blaze); font-weight:700; font-size:20px; line-height:1.1}
+  .note{font-size:17px; line-height:1.6; color:var(--moss); font-family:var(--mono); margin-top:12px}
 
-  footer{background:var(--pine); color:#9FB4A5; padding:30px 0; margin-top:8px; font-family:var(--mono); font-size:12.5px; letter-spacing:.03em}
+  footer{background:var(--pine); color:#9FB4A5; padding:30px 0; margin-top:8px; font-family:var(--mono); font-size:16px; letter-spacing:.02em}
   footer .wrap{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap} footer b{color:#EDEFEA}
   @media print{ nav.bar{position:static} .frames{-webkit-print-color-adjust:exact} section{padding:22px 0} }
 </style>
@@ -157,8 +194,8 @@
 <body>
 
 <nav class="bar"><div class="wrap">
-  <span class="brand">OUTFITR · Young Electric — Creator Brief</span>
-  <span class="cur">Reviewing: <b data-field="model">4148</b>&nbsp;<a href="#pick">↑ change product</a></span>
+  <span class="brand">OUTFITR · Young Electric · Polestar — Creator Brief</span>
+  <span class="cur"><span class="reviewing-highlight">Reviewing: <b data-field="model">4148</b></span><a href="#pick">↑ change product</a></span>
 </div></nav>
 
 <header class="hero"><div class="wrap">
@@ -175,6 +212,14 @@
     <div><dt>Deadline</dt><dd>10 days</dd></div>
     <div><dt>Before publish</dt><dd>Send preview</dd></div>
   </dl>
+  <aside class="image-deliverable" aria-label="Required product image deliverables">
+    <div class="count">5+</div>
+    <div>
+      <h3>Product images required</h3>
+      <p>Provide a minimum of five (5) high-resolution product images, including at least one (1) image featuring the Influencer alongside the product. The images do not need to be posted on social media but must be shared with the Brand via Dropbox, Google Drive, or a similar file-sharing platform.</p>
+    </div>
+    <a href="https://app.milanote.com/1VGDHW1Tna20eW/outfitr?p=cAxdQT3dIsK" target="_blank" rel="noopener">View image references ↗</a>
+  </aside>
 </div></header>
 
 <main>
@@ -191,22 +236,30 @@
   <!-- ============ 01 PRODUCT ============ -->
   <section id="product">
     <div class="sec-head"><span class="sec-num">01</span><h2>The product — know it before you shoot</h2></div>
-    <p class="sec-sub">One idea should come through the whole video: loading a heavy e-bike used to be a two-person struggle — with this rack, one person handles it and drives off.</p>
+    <p class="sec-sub" data-show="rack">One idea should come through the whole video: loading a heavy e-bike used to be a two-person struggle — with this rack, one person handles it and drives off.</p>
+    <p class="sec-sub" data-show="jack">One idea should come through the whole video: raising and lowering a loaded trailer tongue should feel controlled, repeatable, and far easier than manual cranking.</p>
 
     <div class="badges" id="badges">
-      <span class="badge dark"><b data-field="cap">200</b> lb</span>
-      <span class="badge dark"><b data-field="bikes">2</b>-bike</span>
+      <span class="badge dark" data-show="rack"><b data-field="cap">200</b> lb</span>
+      <span class="badge dark" data-show="rack"><b data-field="bikes">2</b>-bike</span>
       <span class="badge" data-show="ramp">Built-in ramp</span>
       <span class="badge" data-show="fold">Folds flat</span>
       <span class="badge" data-show="tilt">Tilt access</span>
       <span class="badge" data-show="fatTire">5″ fat-tire</span>
+      <span class="badge dark" data-show="jack"><b data-field="cap">7,500</b> lb dynamic</span>
+      <span class="badge dark" data-show="jack"><b data-field="staticCap">10,000</b> lb static</span>
+      <span class="badge" data-show="jack"><span data-field="powerShort">7-way plug</span></span>
+      <span class="badge" data-show="jack">LED work light</span>
     </div>
 
-    <div class="prod-line">
+    <div class="prod-line" data-show="rack">
       <b>What it is:</b> a <span data-field="bikes">2</span>-bike hitch-mounted rack rated to <b><span data-field="cap">200</span> lb total</b><span data-show="ramp">, with a <b>built-in ramp</b> so you roll bikes up instead of lifting them</span>. <span data-show="fatTire">Fits fat tires up to 5″. </span><span data-show="fold">Folds flat for storage. </span><span data-show="tilt">Tilts back for trunk access. </span>Drops onto any standard 2″ hitch.
     </div>
+    <div class="prod-line" data-show="jack">
+      <b>What it is:</b> a 12V electric A-frame trailer tongue jack rated for a <b><span data-field="cap">7,500</span> lb dynamic load</b> and <b><span data-field="staticCap">10,000</span> lb static lifting capacity</b>. It lifts from 9″ to 27″, reaches up to 31.5″ with the drop leg, and includes an LED work light and waterproof cover.
+    </div>
 
-    <div class="brands">
+    <div class="brands" data-show="rack">
       <a class="brandbtn of" data-field="url" href="#" target="_blank" rel="noopener">
         <span class="bl">Product page — put this link in your description</span>
         <span class="bn">OUTFITR <span class="arw">↗</span></span>
@@ -216,13 +269,21 @@
         <span class="bn">Young Electric <span class="arw">↗</span></span>
       </a>
     </div>
-
-    <div class="say-name" style="margin:0 0 20px; display:flex; flex-wrap:wrap; gap:9px">
-      <span style="font-family:var(--mono);font-size:13px;background:#fff;border:1px solid var(--line);padding:6px 11px;border-radius:3px">Say the brand + name clearly: <b style="color:var(--blaze-deep)"><span data-field="brandsay">OUTFITR / Young Electric</span> — <span data-field="name">2-Bike Hitch E-bike Rack with Ramp</span></b></span>
-      <span style="font-family:var(--mono);font-size:13px;background:#fff;border:1px solid var(--line);padding:6px 11px;border-radius:3px">Hashtags: <b style="color:var(--blaze-deep)">#OUTFITR&nbsp;&nbsp;#EbikeRack</b></span>
+    <div class="brands single" data-show="jack">
+      <a class="brandbtn of" data-field="url" href="#" target="_blank" rel="noopener">
+        <span class="bl">Amazon product page — put this link in your description</span>
+        <span class="bn">Polestar <span class="arw">↗</span></span>
+      </a>
     </div>
 
-    <div class="specs">
+    <div class="say-name" style="margin:0 0 20px; display:flex; flex-wrap:wrap; gap:9px">
+      <span style="font-family:var(--mono);font-size:17px;background:#fff;border:1px solid var(--line);padding:8px 13px;border-radius:3px">Say the brand + name clearly: <b style="color:var(--blaze-deep)" data-field="spokenName">OUTFITR / Young Electric — 2-Bike Hitch E-bike Rack with Ramp</b></span>
+      <span data-show="rack" style="font-family:var(--mono);font-size:17px;background:#fff;border:1px solid var(--line);padding:8px 13px;border-radius:3px">Hashtags: <b style="color:var(--blaze-deep)">#OUTFITR&nbsp;&nbsp;#EbikeRack</b></span>
+      <span data-show="jack7500" style="font-family:var(--mono);font-size:17px;background:#fff;border:1px solid var(--line);padding:8px 13px;border-radius:3px">Hashtags: <b style="color:var(--blaze-deep)">#Polestar&nbsp;&nbsp;#TrailerJack</b></span>
+      <span data-show="jack5000" style="font-family:var(--mono);font-size:17px;background:#fff;border:1px solid var(--line);padding:8px 13px;border-radius:3px">Hashtags: <b style="color:var(--blaze-deep)">#POLESTAR&nbsp;&nbsp;#ElectricTrailerJack&nbsp;&nbsp;#TongueJack&nbsp;&nbsp;#PowerJack&nbsp;&nbsp;#5000LBS</b></span>
+    </div>
+
+    <div class="specs" data-show="rack">
       <div class="spec"><div class="n">load</div><h4><em data-field="cap">200</em> lb capacity</h4><p>Carries <span data-field="bikes">2</span> e-bike(s) or heavy bicycles, securely.</p></div>
       <div class="spec" data-show="ramp"><div class="n">key feature</div><h4><em>Built-in ramp</em></h4><p>Roll bikes up — no heavy lifting. The hero feature.</p></div>
       <div class="spec"><div class="n">secure</div><h4>Adjustable straps</h4><p>Ratchet to any wheelbase; protect the frame from scratches.</p></div>
@@ -233,6 +294,25 @@
       <div class="spec"><div class="n">weight</div><h4>Lightweight aluminum</h4><p>≈ ⅓ the weight of steel racks — easy to handle.</p></div>
       <div class="spec"><div class="n">fit</div><h4>Universal 2″ hitch</h4><p>Fits sedans, trucks, SUVs, RVs. 1.25″ adaptor available.</p></div>
     </div>
+    <div class="specs jack-specs" data-show="jack">
+      <div class="spec"><div class="n">dynamic load</div><h4><em data-field="cap">7,500</em> lb</h4><p>Show it raising and lowering a real, properly supported trailer tongue.</p></div>
+      <div class="spec"><div class="n">static capacity</div><h4><em data-field="staticCap">10,000</em> lb</h4><p>State this separately from the dynamic load rating.</p></div>
+      <div class="spec"><div class="n">lift range</div><h4><em>9″–27″</em></h4><p>Up to 31.5″ maximum lifting height with the 4.5″ drop leg.</p></div>
+      <div class="spec"><div class="n">power</div><h4 data-field="power">12V DC · 7-way plug</h4><p>Show the correct connection clearly before operating.</p></div>
+      <div class="spec"><div class="n">night setup</div><h4>LED work light</h4><p>Illuminate the ball and coupler area for low-light use.</p></div>
+      <div class="spec"><div class="n">protection</div><h4>Weather-ready</h4><p>Alloy-steel construction, waterproof protective cover, and built-in circuit protection.</p></div>
+    </div>
+    <div data-show="jack5000" style="margin-top:22px">
+      <div class="eyebrow" style="margin-bottom:10px">5000 model · Amazon-aligned key points</div>
+      <div class="specs jack-specs">
+        <div class="spec"><div class="n">load ratings</div><h4><em>5,000 / 7,500</em> lb</h4><p>5,000 lb dynamic load and 7,500 lb static lifting power; state them as separate ratings.</p></div>
+        <div class="spec"><div class="n">total travel</div><h4><em>22.5″</em></h4><p>18″ powered travel plus the removable 4.5″ drop leg, from 9″ to 27″ and up to 31.5″.</p></div>
+        <div class="spec"><div class="n">listed lifting time</div><h4><em>90 seconds</em></h4><p>The Amazon comparison table lists 90 s; time a real lift on camera and report the result honestly.</p></div>
+        <div class="spec"><div class="n">drive system</div><h4>Ball screw + brake motor</h4><p>Designed for smoother, more precise lifting with reduced friction and wear.</p></div>
+        <div class="spec"><div class="n">manual backup</div><h4>Manual hand crank</h4><p>The crank is an included component; demonstrate it only according to the supplied instructions.</p></div>
+        <div class="spec"><div class="n">outdoor use</div><h4>Cover + LED + breaker</h4><p>Waterproof rain cover, coupler-area LED, and an automatic-reset circuit breaker.</p></div>
+      </div>
+    </div>
   </section>
 
   <!-- ============ 02 MUST-HAVES ============ -->
@@ -242,16 +322,37 @@
     <div class="must">
       <div class="top"><strong>✓ Include every item below</strong><span>Auto-reject if missing</span></div>
       <div class="grp"><h4>Say it</h4><ul class="check">
-        <li>Say the brand + full product name clearly on camera: <b>“<span data-field="brandsay">OUTFITR / Young Electric</span> <span data-field="name">2-Bike Hitch E-bike Rack with Ramp</span>.”</b></li>
+        <li>Say the brand + full product name clearly on camera: <b>“<span data-field="spokenName">OUTFITR / Young Electric — 2-Bike Hitch E-bike Rack with Ramp</span>.”</b></li>
         <li>Put the <b>product-page link</b> in the description.</li>
-        <li>Include the hashtags <code>#OUTFITR</code> <code>#EbikeRack</code>.</li>
+        <li data-show="rack">Include the hashtags <code>#OUTFITR</code> <code>#EbikeRack</code>.</li>
+        <li data-show="jack7500">Include the hashtags <code>#Polestar</code> <code>#TrailerJack</code>.</li>
+        <li data-show="jack5000">Include all five hashtags: <code>#POLESTAR</code> <code>#ElectricTrailerJack</code> <code>#TongueJack</code> <code>#PowerJack</code> <code>#5000LBS</code>.</li>
       </ul></div>
-      <div class="grp"><h4>Show it — with real testing, not just talking</h4><ul class="check">
+      <div class="grp" data-show="rack"><h4>Show it — with real testing, not just talking</h4><ul class="check">
         <li><span data-show="ramp">Demonstrate the <b>ramp</b> loading a bike, </span>the <b>adjustable straps</b>, <span data-show="fold">the <b>easy folding</b>, </span><span data-show="tilt">the <b>tilt access</b>, </span>and <b>universal fit</b> on your hitch.</li>
         <li>Use at least <b>one real e-bike</b><span data-show="multibike"> (two if you have them — it shows the multi-bike + safety-space feature)</span>.</li>
       </ul></div>
-      <div class="grp"><h4>Road test — required, not optional</h4><ul class="check">
+      <div class="grp" data-show="rack"><h4>Road test — required, not optional</h4><ul class="check">
         <li>A <b>real-world road test</b> beyond gentle turns: include <b>rough / uneven terrain</b> — dirt roads, speed bumps, inclines or declines — to prove stability and durability.</li>
+      </ul></div>
+      <div class="grp" data-show="jack"><h4>Show it — with a real trailer, not just talking</h4><ul class="check">
+        <li>Install it correctly on an <b>A-frame trailer</b>, then show the <b><span data-field="power">12V DC · 7-way plug</span></b> connection before operating.</li>
+        <li>Raise and lower a <b>real trailer tongue under load</b>. Film one wide view plus close-ups of the switch, inner tube, drop leg, foot plate, and coupler.</li>
+        <li>Show the <b>9″–27″ lift range</b>, the <b>4.5″ drop leg</b>, <b>LED work light</b>, and <b>waterproof protective cover</b>.</li>
+      </ul></div>
+      <div class="grp" data-show="jack"><h4>Load test — required, not optional</h4><ul class="check">
+        <li>Complete at least <b>three full raise / lower cycles</b> on camera. Show smooth travel, stable holding, and how quickly the coupler clears and returns to the hitch ball.</li>
+        <li>Keep the trailer <b>chocked and safely supported</b>. Never stand under the tongue or exceed the trailer or jack manufacturer’s limits.</li>
+      </ul></div>
+      <div class="grp" data-show="jack5000"><h4>5000 model claims — mention and demonstrate every point</h4><ul class="check">
+        <li><b>5,000 lb dynamic load</b> and <b>7,500 lb static lifting power</b>. Keep the two Amazon-listed ratings separate.</li>
+        <li><b>22.5″ total travel</b>: 18″ powered travel plus the removable 4.5″ drop leg, from 9″ to 27″ and up to 31.5″.</li>
+        <li>The <b>advanced ball-screw design</b> and <b>brake motor</b> for smooth, controlled lifting.</li>
+        <li>The Amazon comparison table lists a <b>90-second lifting time</b>. Time a real lift and report the measured result honestly.</li>
+        <li><b>Weather-resistant construction</b>, waterproof rain cover, and the <b>automatic-reset circuit breaker</b>.</li>
+        <li><b>Included manual hand crank</b>: demonstrate it only according to the supplied product instructions.</li>
+        <li><b>LED nighttime visibility</b>: film a genuine low-light before / after comparison at the ball and coupler.</li>
+        <li>Optional performance test: measure <b>motor temperature and current draw</b>. Show the tools and actual result; do not present either as an Amazon-listed specification.</li>
       </ul></div>
       <div class="grp"><h4>Craft</h4><ul class="check">
         <li><b>≥ 10 minutes</b>, in <b>4K</b> with <b>clear audio</b>.</li>
@@ -269,16 +370,18 @@
   <section>
     <div class="rule"><div class="mk">“</div><div>
       <h3>The one filming rule that makes these videos work</h3>
-      <p>Stop talking while you operate. Show the action and <b>let the mechanical sounds carry it</b> — the ramp locking in, the ratchet clicking, the frame folding shut. Record those clean, and save voiceover for before or after the action, not on top of it. <b>Show, don't narrate.</b></p>
+      <p data-show="rack">Stop talking while you operate. Show the action and <b>let the mechanical sounds carry it</b> — the ramp locking in, the ratchet clicking, the frame folding shut. Record those clean, and save voiceover for before or after the action, not on top of it. <b>Show, don't narrate.</b></p>
+      <p data-show="jack">Stop talking while you operate. Get clean sound from the <b>motor, switch, drop-leg pin, and coupler</b>. Save voiceover for before or after each action so viewers can hear how the jack really works. <b>Show the full cycle—don't hide it behind cuts.</b></p>
     </div></div>
   </section>
 
   <!-- ============ 03 THE SHOOT ============ -->
   <section id="shoot">
     <div class="sec-head"><span class="sec-num">03</span><h2>The shoot — shot by shot</h2></div>
-    <p class="sec-sub">A ~10-minute flow that hits every requirement. Timecodes are a guide; the road test is the longest, most important stretch. <em>SAY</em> lines are talking points to put in your own words — never read verbatim. The reference frames under each step are real examples of the shot we want.</p>
+    <p class="sec-sub" data-show="rack">A ~10-minute flow that hits every requirement. Timecodes are a guide; the road test is the longest, most important stretch. <em>SAY</em> lines are talking points to put in your own words — never read verbatim. The reference frames under each step are real examples of the shot we want.</p>
+    <p class="sec-sub" data-show="jack">A ~10-minute flow built around a real installation and repeated loaded operation. Timecodes are a guide. <em>SAY</em> lines are prompts to put in your own words—never read them verbatim.</p>
 
-    <div class="shots">
+    <div class="shots" data-show="rack">
 
       <div class="shot">
         <div class="hd"><span class="tc req">00:00–00:30</span><span class="st">STEP 1</span><h3>Hook — the struggle</h3><span class="flag r">Required</span></div>
@@ -400,13 +503,90 @@
       </div>
 
     </div>
+
+    <div class="shots" data-show="jack">
+      <div class="shot">
+        <div class="hd"><span class="tc req">00:00–00:35</span><span class="st">STEP 1</span><h3>Hook — replace the hand-crank struggle</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Open on the effort and time of manually cranking a trailer tongue. Cut to three quick previews: press the switch, the coupler rises, and the LED lights the hitch area.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">If setting up your trailer starts with endless hand cranking, this Polestar electric jack is made to remove that step.</span></div>
+          <div class="row" data-show="jack5000"><span class="lab">Alt hook</span><span class="val">Instead of the pain-point opening, compare it with a manual jack or a competitor. Keep the comparison factual: listed lifting time, ball-screw drive, weather protection, included hand crank, and real measured performance.</span></div>
+          <div class="row"><span class="lab">Safety</span><span class="val"><em>Park on stable ground, set the brake, and chock the wheels before filming.</em></span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc">00:35–01:20</span><span class="st">STEP 2</span><h3>Unbox, identify, and inspect</h3><span class="flag o">Recommended</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Top-down unboxing. Lay out the jack, foot plate, drop leg, hardware, power connection, and waterproof cover. Capture the product label and finish in close-up.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">This is the <span data-field="spokenName">Polestar 7500 lbs Trailer Jack</span>, rated for a <span data-field="cap">7,500</span>-pound dynamic load.</span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">01:20–02:30</span><span class="st">STEP 3</span><h3>Install on the A-frame</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Show the original jack coming off, position the Polestar jack in the A-frame opening, align the mounting plate, and tighten all mounting hardware evenly. Use a wide shot and tight hand-detail shots.</span></div>
+          <div class="row"><span class="lab">Power</span><span class="val">Show the <b data-field="power">12V DC · 7-way plug</b> connection clearly and explain where it receives power.</span></div>
+          <div class="row tip"><span class="lab">Tip</span><span class="val">Do not claim a universal wiring method. Follow the included manual and your trailer manufacturer’s instructions.</span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">02:30–03:30</span><span class="st">STEP 4</span><h3>Controls, drop leg, and lift range</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Walk around the installed jack. Show the extend/retract switch, LED control, inner tube, 4.5″ drop leg, locking pin, and foot plate. Measure or visually demonstrate the 9″–27″ travel and up to 31.5″ maximum height.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">The lift runs from 9 to 27 inches, and the drop leg brings the maximum lifting height to 31.5 inches.</span></div>
+          <div class="row" data-show="jack5000"><span class="lab">5000</span><span class="val">Explicitly call this <b>22.5″ total vertical travel</b>, including the additional 4.5″ drop-down leg. Show the tape measure or clear start / end reference points.</span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">03:30–06:45</span><span class="st">STEP 5</span><h3>Real loaded lift test — three full cycles</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">With the trailer properly chocked and supported, record at least three uninterrupted raise / lower cycles. Show the coupler clearing the hitch ball, stable holding at height, then returning smoothly. Keep a wide safety view and add close-ups of the tube and foot.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">The rated dynamic load is <span data-field="cap">7,500</span> pounds, with a <span data-field="staticCap">10,000</span>-pound static lifting capacity. Those are two different ratings.</span></div>
+          <div class="row" data-show="jack5000"><span class="lab">Measure</span><span class="val">The Amazon comparison table lists a <b>90-second lifting time</b> for this hard-wired 5000 model. Time a real lift and show the actual result. You may also measure motor temperature and current draw, but present both only as your test results—not published specifications.</span></div>
+          <div class="row" data-show="jack7500"><span class="lab">Measure</span><span class="val">The Amazon comparison table lists a <b>120-second lifting time</b> for this 7-way-plug 7500 model. Time a real lift and show the actual result if it differs.</span></div>
+          <div class="row"><span class="lab">Sound</span><span class="val"><em>Leave one complete cycle with natural motor sound and no music or voiceover.</em></span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">06:45–08:00</span><span class="st">STEP 6</span><h3>Hitch alignment and stability</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Use the jack to make a controlled height adjustment while aligning the coupler with the hitch ball. Show the trailer holding steady at the working height, then complete the connection or disconnection correctly.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">Small height changes are easy to control, which makes lining up the ball and coupler much less frustrating.</span></div>
+          <div class="row" data-show="jack5000"><span class="lab">Drive</span><span class="val">Explain the Amazon-listed <b>advanced ball-screw design</b> and <b>brake motor</b>. Then demonstrate the included manual hand crank strictly according to the supplied instructions; do not add unlisted claims about the braking mechanism.</span></div>
+          <div class="row" data-show="jack7500"><span class="lab">Drive</span><span class="val">Use the wording from the Amazon bullet text: <b>advanced thread-friction design</b> paired with a <b>brake motor</b>. The comparison table also shows an included manual hand crank; demonstrate it only according to the supplied instructions.</span></div>
+          <div class="row"><span class="lab">Safety</span><span class="val"><em>Keep hands and feet clear of pinch points and never place any part of your body under the tongue.</em></span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc">08:00–09:15</span><span class="st">STEP 7</span><h3>LED and weather protection</h3><span class="flag o">Recommended</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">At dusk or in a shaded garage, turn on the LED and show the ball / coupler area before and after. Fit the waterproof cover and show the control switches and alloy-steel body in detail.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">The work light is aimed where you need it for late arrival, and the included cover protects the jack when it stays outside.</span></div>
+          <div class="row" data-show="jack5000"><span class="lab">5000</span><span class="val">Mention only the Amazon-listed protection: <b>weather-resistant construction</b>, the included <b>waterproof rain cover</b>, and a built-in circuit breaker that trips and automatically resets if amperage is too high.</span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">09:15–end</span><span class="st">STEP 8</span><h3>Honest verdict + CTA</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">On camera beside the installed jack. Summarize installation, speed, sound, control, and the feature you found most useful. Show the Amazon link on screen and in the description.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">After installing it and running repeated loaded cycles, the biggest improvement is simple: trailer setup takes less effort and the height is easy to control. The Polestar link is below.</span></div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ============ 04 TALKING POINTS ============ -->
   <section id="say">
     <div class="sec-head"><span class="sec-num">04</span><h2>Talking points — say them your way</h2></div>
     <p class="sec-sub">Grab-and-go lines for when you're not sure what to say. Put them in your own words on camera — <b>don't read them aloud</b>. Every claim here is true and safe to make.</p>
-    <div class="lines">
+    <div class="lines" data-show="rack">
       <div class="line"><span class="who">Capacity</span>Rated to <span data-field="cap">200</span> pounds total, so it actually handles a heavy fat-tire e-bike — not just a road bike.</div>
       <div class="line" data-show="ramp"><span class="who">Ramp</span>The built-in ramp means you roll the bike up instead of dead-lifting it onto a rack.</div>
       <div class="line"><span class="who">Weight</span>It's aluminum — about a third the weight of a steel rack — so getting it on and off the car isn't a workout.</div>
@@ -416,6 +596,22 @@
       <div class="line" data-show="fold"><span class="who">Folding</span>Empty, it folds flat against the car — no wasted garage or parking space.</div>
       <div class="line" data-show="tilt"><span class="who">Tilt</span>It tilts back so you can reach the trunk even with the bikes loaded.</div>
       <div class="line"><span class="who">Fit</span>Drops onto any standard 2-inch hitch — cars, trucks, SUVs, RVs — with a 1.25-inch adaptor available.</div>
+    </div>
+    <div class="lines" data-show="jack">
+      <div class="line"><span class="who">Dynamic load</span>Rated for a <span data-field="cap">7,500</span>-pound dynamic load during powered raising and lowering.</div>
+      <div class="line"><span class="who">Static capacity</span>The separate static lifting capacity is <span data-field="staticCap">10,000</span> pounds—keep the two ratings distinct.</div>
+      <div class="line"><span class="who">Travel</span>The powered lift runs from 9 to 27 inches; the 4.5-inch drop leg brings maximum lifting height to 31.5 inches.</div>
+      <div class="line"><span class="who">Power</span>This model uses <span data-field="power">12V DC · 7-way plug</span>. Show the correct connection instead of describing it only.</div>
+      <div class="line"><span class="who">Control</span>Powered extend and retract makes small coupler-height adjustments easier than repeated manual cranking.</div>
+      <div class="line"><span class="who">Night setup</span>The built-in LED illuminates the ball and coupler area when you arrive after dark.</div>
+      <div class="line"><span class="who">Protection</span>The alloy-steel jack includes a waterproof protective cover and built-in circuit protection for outdoor trailer use.</div>
+      <div class="line"><span class="who">Proof</span>Let viewers see and hear a complete loaded cycle; an uninterrupted demonstration is more convincing than a specification list.</div>
+      <div class="line" data-show="jack5000"><span class="who">5000 · lifting time</span>The Amazon comparison table lists 90 seconds for this model. Time the real lift on camera and use your measured result if it differs.</div>
+      <div class="line" data-show="jack5000"><span class="who">5000 · drive</span>The advanced ball-screw design reduces friction and wear; a brake motor provides consistent, controlled lifting power.</div>
+      <div class="line" data-show="jack5000"><span class="who">5000 · weather</span>Amazon describes weather-resistant construction, an included waterproof rain cover, and an automatic-reset circuit breaker.</div>
+      <div class="line" data-show="jack5000"><span class="who">5000 · manual backup</span>A manual hand crank is included. Show it only according to the supplied instructions and avoid claims about unlisted internal brake behavior.</div>
+      <div class="line" data-show="jack7500"><span class="who">7500 · lifting time</span>The Amazon comparison table lists 120 seconds for this 7-way-plug model. Time the real lift and use your measured result if it differs.</div>
+      <div class="line" data-show="jack7500"><span class="who">7500 · drive</span>The Amazon bullet text describes an advanced thread-friction design paired with a brake motor for smooth, controlled lifting.</div>
     </div>
   </section>
 
@@ -428,7 +624,9 @@
         <li>Keep it <b>≥ 10 minutes</b> and mostly outdoors.</li>
         <li><b>Send us the preview first</b> — publish only once approved.</li>
         <li>Upload within <b>10 days</b> of receiving the product.</li>
-        <li>Add the product link + <code style="font-family:var(--mono);font-size:13px">#OUTFITR #EbikeRack</code>.</li>
+        <li data-show="rack">Add the product link + <code style="font-family:var(--mono);font-size:16px">#OUTFITR #EbikeRack</code>.</li>
+        <li data-show="jack7500">Add the Amazon product link + <code style="font-family:var(--mono);font-size:16px">#Polestar #TrailerJack</code>.</li>
+        <li data-show="jack5000">Add the Amazon product link + <code style="font-family:var(--mono);font-size:16px">#POLESTAR #ElectricTrailerJack #TongueJack #PowerJack #5000LBS</code>.</li>
         <li>Be objective — the honest, real-world review is what viewers trust.</li>
       </ul></div>
       <div class="panel no"><h4>Don't</h4><ul>
@@ -446,8 +644,8 @@
 </main>
 
 <footer><div class="wrap">
-  <span><b>OUTFITR</b> · <b>Young Electric</b> · <span data-field="name">2-Bike Hitch E-bike Rack with Ramp</span> · Model <span data-field="model">4148</span></span>
-  <span>Creator Shooting Brief · Universal Rack v3</span>
+  <span><b data-field="brandfooter">OUTFITR / Young Electric</b> · <span data-field="name">2-Bike Hitch E-bike Rack with Ramp</span> · Model <span data-field="model">4148</span></span>
+  <span>Creator Shooting Brief · Multi-product v4</span>
 </div></footer>
 
 <script>
@@ -465,15 +663,21 @@ const PRODUCTS = {
   "4149": {name:"Single Hitch E-Bike Rack with Ramp", cap:100, bikes:1, ramp:true, fold:false, tilt:false, fatTire:true, style:"platform", url:"https://outfitrer.com/products/1-bike-hitch-rack-with-ramp-lightweight-bike-carrier-100-lbs-capacity-fits-2-receiver", youngUrl:"https://youngelectricbikes.com/collections/sale/products/1-bike-hitch-e-bike-rack-with-ramp-lightweight-single-electric-bike-carrier-100-lbs-capacity-fits-2-receiver"},
   "4156": {name:"3-Bike Hitch E-Bike Rack with Ramp, Foldable", cap:250, bikes:3, ramp:true, fold:true, tilt:true, fatTire:true, style:"platform", url:"https://outfitrer.com/products/3-bike-hitch-e-bike-rack-with-ramp-fat-tire-electric-bike-carrier-250-lbs-capacity-fits-2-receiver", youngUrl:"https://youngelectricbikes.com/collections/sale/products/3-bike-hitch-e-bike-rack-with-ramp-fat-tire-electric-bike-carrier-250-lbs-capacity-fits-2-receiver"},
   "4209": {name:"Etrike Hitch Rack, Adjustable Carrier for Adult Electric Trikes", cap:200, bikes:1, ramp:true, fold:true, tilt:false, fatTire:true, style:"etrike", url:"https://outfitrer.com/collections/savings/products/etrike-hitch-rack-200lbs-capacity-2-receiver-adjustable-carrier-for-adult-electric-fat-tir", youngUrl:"https://youngelectricbikes.com/collections/sale/products/200lbs-hitch-mount-trike-rack-with-2-receiver-adjustable-carrier-for-adult-electric-fat-tire-folding-tricycles-fits-cars-suvs-trucks-rvs"},
+  "7500": {category:"jack", brand:"Polestar", name:"7500 lbs Trailer Jack", spokenName:"Polestar 7500 lbs Trailer Jack", cap:7500, staticCap:10000, power:"12V DC via 7-way plug", powerShort:"7-way plug", url:"https://www.amazon.com/dp/B0G4CSMWCG"},
+  "5000": {category:"jack", brand:"Polestar", name:"5000 lbs Trailer Jack", spokenName:"Polestar 5000 LBS Electric Trailer Jack", cap:5000, staticCap:7500, power:"12V DC · hard-wired", powerShort:"hard-wired", url:"https://www.amazon.com/dp/B09W5FS6ZD?th=1"},
 };
-const ORDER = ["4148","4155","4197","4118","4095","4186","4190","4157","4149","4156","4209"];
+const ORDER = ["4148","4155","4197","4118","4095","4186","4190","4157","4149","4156","4209","7500","5000"];
+
+const formatNum = n => Number(n).toLocaleString("en-US");
 
 function headline(p){
+  if(p.category==='jack') return `${formatNum(p.cap)} lbs Electric <span class="r">Trailer Jack</span>`;
   const n = p.bikes===1?"1-Bike":p.bikes===3?"3-Bike":"2-Bike";
   const ft = p.fatTire ? "Fat-Tire " : "";
   return `${n} Hitch ${ft}E-bike Rack${p.ramp?' <span class="r">with Ramp</span>':''}`;
 }
 function shortlabel(p){
+  if(p.category==='jack') return `electric trailer jack\n${formatNum(p.cap)} lb`;
   return [p.bikes+"-bike", p.ramp?"ramp":"no-ramp", p.fold?"fold":"fixed", p.tilt?"tilt":null].filter(Boolean).join(" · ")+"\n"+p.cap+" lb";
 }
 
@@ -483,14 +687,20 @@ function apply(sku){
     const k = el.getAttribute('data-field');
     if(k==='model') el.textContent = sku;
     else if(k==='name') el.textContent = p.name;
-    else if(k==='cap') el.textContent = p.cap;
+    else if(k==='cap') el.textContent = formatNum(p.cap);
+    else if(k==='staticCap') el.textContent = formatNum(p.staticCap || 0);
     else if(k==='bikes') el.textContent = p.bikes;
-    else if(k==='brandsay') el.textContent = 'OUTFITR / Young Electric';
+    else if(k==='brandsay') el.textContent = p.brand || 'OUTFITR / Young Electric';
+    else if(k==='spokenName') el.textContent = p.spokenName || `${p.brand || 'OUTFITR / Young Electric'} — ${p.name}`;
+    else if(k==='brandfooter') el.textContent = p.brand || 'OUTFITR / Young Electric';
+    else if(k==='power') el.textContent = p.power || '';
+    else if(k==='powerShort') el.textContent = p.powerShort || '';
     else if(k==='headline') el.innerHTML = headline(p);
     else if(k==='url') el.setAttribute('href', p.url);
     else if(k==='youngUrl') el.setAttribute('href', p.youngUrl || YG_HOME);
   });
-  const cond = { ramp:p.ramp, noramp:!p.ramp, fold:p.fold, nofold:!p.fold, tilt:p.tilt, notilt:!p.tilt,
+  const isJack = p.category==='jack';
+  const cond = { rack:!isJack, jack:isJack, jack5000:isJack && sku==='5000', jack7500:isJack && sku==='7500', ramp:!isJack && p.ramp, noramp:!isJack && !p.ramp, fold:!isJack && p.fold, nofold:!isJack && !p.fold, tilt:!isJack && p.tilt, notilt:!isJack && !p.tilt,
     multibike:p.bikes>=2, onebike:p.bikes===1, threebike:p.bikes===3, fatTire:p.fatTire,
     platform:p.style==='platform', tireclamp:p.style==='tire-clamp' };
   document.querySelectorAll('[data-show]').forEach(el=>{ el.hidden = !cond[el.getAttribute('data-show')]; });
@@ -503,8 +713,8 @@ function apply(sku){
   for(const sku of ORDER){
     const p = PRODUCTS[sku]; if(!p) continue;
     const b = document.createElement('button');
-    b.className='pcard'; b.dataset.sku=sku; b.type='button';
-    b.innerHTML = `<span class="ph" data-num="${sku}"><img src="imgs/products/${sku}.jpg" alt="${sku}" loading="lazy"
+    b.className=`pcard${p.category==='jack'?' jack':''}`; b.dataset.sku=sku; b.type='button';
+    b.innerHTML = `<span class="ph" data-num="${sku}"><img src="imgs/products/${sku}.jpg" alt="${p.name}" loading="lazy"
         onerror="this.closest('.pcard').classList.add('noimg')"></span>
       <span class="pn"><span class="dot"></span>${sku}</span>
       <span class="pl">${shortlabel(p).replace('\\n','<br>')}</span>`;
