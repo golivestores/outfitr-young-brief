@@ -172,6 +172,18 @@
   .frames .cap{font-family:var(--mono); font-size:15px; letter-spacing:.03em; text-transform:uppercase; color:var(--moss); margin:0 6px 10px}
   .frames img{width:100%; display:block; border-radius:6px; border:1px solid var(--line)}
 
+  /* creator reference videos */
+  .video-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px}
+  .video-card{display:flex; flex-direction:column; min-width:0; overflow:hidden; color:var(--ink); background:#fff; border:1px solid var(--line); border-radius:9px; text-decoration:none; box-shadow:0 3px 12px rgba(24,33,28,.07); transition:transform .15s,border-color .15s,box-shadow .15s}
+  .video-card:hover{transform:translateY(-2px); border-color:var(--blaze); box-shadow:0 7px 18px rgba(24,33,28,.13)}
+  .video-thumb{position:relative; display:block; aspect-ratio:16/9; overflow:hidden; background:var(--pine)}
+  .video-thumb img{width:100%; height:100%; display:block; object-fit:cover}
+  .video-play{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); display:flex; align-items:center; justify-content:center; width:52px; height:38px; padding-left:3px; border-radius:10px; color:#fff; background:#E62117; box-shadow:0 3px 12px rgba(0,0,0,.32); font-size:21px; line-height:1}
+  .video-meta{display:flex; flex-direction:column; gap:6px; padding:13px 15px 15px}
+  .video-creator{font-family:var(--mono); font-size:15px; font-weight:700; color:var(--blaze-deep)}
+  .video-title{font-family:var(--heading); font-size:19px; line-height:1.4; overflow-wrap:break-word}
+  .video-watch{margin-top:2px; font-family:var(--mono); font-size:15px; font-weight:700; color:var(--moss-ink)}
+
   .lines{display:flex; flex-direction:column; gap:9px}
   .line{background:#fff; border:1px solid var(--line); border-left:3px solid var(--moss); border-radius:0 5px 5px 0; padding:13px 17px; font-size:18px; line-height:1.65}
   .line .who{font-family:var(--mono); font-size:15px; letter-spacing:.03em; text-transform:uppercase; color:var(--moss); display:block; margin-bottom:4px}
@@ -236,24 +248,35 @@
   <!-- ============ 01 PRODUCT ============ -->
   <section id="product">
     <div class="sec-head"><span class="sec-num">01</span><h2>The product — know it before you shoot</h2></div>
-    <p class="sec-sub" data-show="rack">One idea should come through the whole video: loading a heavy e-bike used to be a two-person struggle — with this rack, one person handles it and drives off.</p>
+    <p class="sec-sub" data-show="standardRack">One idea should come through the whole video: loading a heavy e-bike used to be a two-person struggle — with this rack, one person handles it and drives off.</p>
+    <p class="sec-sub" data-show="etrike">One idea should come through the whole video: transporting a heavy e-trike should be a controlled, single-person process — adjust the carrier, deploy all three ramps, roll the e-trike on, secure all three wheels, and drive with confidence.</p>
     <p class="sec-sub" data-show="jack">One idea should come through the whole video: raising and lowering a loaded trailer tongue should feel controlled, repeatable, and far easier than manual cranking.</p>
 
     <div class="badges" id="badges">
       <span class="badge dark" data-show="rack"><b data-field="cap">200</b> lb</span>
-      <span class="badge dark" data-show="rack"><b data-field="bikes">2</b>-bike</span>
+      <span class="badge dark" data-show="standardRack"><b data-field="bikes">2</b>-bike</span>
       <span class="badge" data-show="ramp">Built-in ramp</span>
       <span class="badge" data-show="fold">Folds flat</span>
       <span class="badge" data-show="tilt">Tilt access</span>
       <span class="badge" data-show="fatTire">5″ fat-tire</span>
+      <span class="badge dark" data-show="rack4148">100 lb / bike</span>
+      <span class="badge" data-show="rack4148">1-year warranty</span>
+      <span class="badge dark" data-show="etrike">E-trike carrier</span>
+      <span class="badge" data-show="etrike">3 integrated ramps</span>
+      <span class="badge" data-show="etrike">58″ wheelbase</span>
+      <span class="badge" data-show="etrike">36″ track width</span>
+      <span class="badge" data-show="etrike">Foldable</span>
       <span class="badge dark" data-show="jack"><b data-field="cap">7,500</b> lb dynamic</span>
       <span class="badge dark" data-show="jack"><b data-field="staticCap">10,000</b> lb static</span>
       <span class="badge" data-show="jack"><span data-field="powerShort">7-way plug</span></span>
       <span class="badge" data-show="jack">LED work light</span>
     </div>
 
-    <div class="prod-line" data-show="rack">
+    <div class="prod-line" data-show="standardRack">
       <b>What it is:</b> a <span data-field="bikes">2</span>-bike hitch-mounted rack rated to <b><span data-field="cap">200</span> lb total</b><span data-show="ramp">, with a <b>built-in ramp</b> so you roll bikes up instead of lifting them</span>. <span data-show="fatTire">Fits fat tires up to 5″. </span><span data-show="fold">Folds flat for storage. </span><span data-show="tilt">Tilts back for trunk access. </span>Drops onto any standard 2″ hitch.
+    </div>
+    <div class="prod-line" data-show="etrike">
+      <b>What it is:</b> a hitch-mounted carrier designed specifically for adult electric tricycles and other compatible e-trikes, rated to <b>200 lb maximum</b>. Its steel-and-aluminum structure fits a <b>2″ receiver</b>, uses <b>three integrated loading ramps</b>, and adjusts for e-trikes up to <b>58″ wheelbase</b> and <b>36″ track width</b>.
     </div>
     <div class="prod-line" data-show="jack">
       <b>What it is:</b> a 12V electric A-frame trailer tongue jack rated for a <b><span data-field="cap">7,500</span> lb dynamic load</b> and <b><span data-field="staticCap">10,000</span> lb static lifting capacity</b>. It lifts from 9″ to 27″, reaches up to 31.5″ with the drop leg, and includes an LED work light and waterproof cover.
@@ -278,13 +301,15 @@
 
     <div class="say-name" style="margin:0 0 20px; display:flex; flex-wrap:wrap; gap:9px">
       <span style="font-family:var(--mono);font-size:17px;background:#fff;border:1px solid var(--line);padding:8px 13px;border-radius:3px">Say the brand + name clearly: <b style="color:var(--blaze-deep)" data-field="spokenName">OUTFITR / Young Electric — 2-Bike Hitch E-bike Rack with Ramp</b></span>
-      <span data-show="rack" style="font-family:var(--mono);font-size:17px;background:#fff;border:1px solid var(--line);padding:8px 13px;border-radius:3px">Hashtags: <b style="color:var(--blaze-deep)">#OUTFITR&nbsp;&nbsp;#EbikeRack</b></span>
+      <span data-show="standardRack" style="font-family:var(--mono);font-size:17px;background:#fff;border:1px solid var(--line);padding:8px 13px;border-radius:3px">Hashtags: <b style="color:var(--blaze-deep)">#OUTFITR&nbsp;&nbsp;#EbikeRack</b></span>
+      <span data-show="etrike" style="font-family:var(--mono);font-size:17px;background:#fff;border:1px solid var(--line);padding:8px 13px;border-radius:3px">Hashtags: <b style="color:var(--blaze-deep)">#OUTFITR&nbsp;&nbsp;#EtrikeRack</b></span>
       <span data-show="jack7500" style="font-family:var(--mono);font-size:17px;background:#fff;border:1px solid var(--line);padding:8px 13px;border-radius:3px">Hashtags: <b style="color:var(--blaze-deep)">#Polestar&nbsp;&nbsp;#TrailerJack</b></span>
       <span data-show="jack5000" style="font-family:var(--mono);font-size:17px;background:#fff;border:1px solid var(--line);padding:8px 13px;border-radius:3px">Hashtags: <b style="color:var(--blaze-deep)">#POLESTAR&nbsp;&nbsp;#ElectricTrailerJack&nbsp;&nbsp;#TongueJack&nbsp;&nbsp;#PowerJack&nbsp;&nbsp;#5000LBS</b></span>
     </div>
 
-    <div class="specs" data-show="rack">
+    <div class="specs" data-show="standardRack">
       <div class="spec"><div class="n">load</div><h4><em data-field="cap">200</em> lb capacity</h4><p>Carries <span data-field="bikes">2</span> e-bike(s) or heavy bicycles, securely.</p></div>
+      <div class="spec" data-show="rack4148"><div class="n">per-bike capacity</div><h4><em>100</em> lb per bike</h4><p>Supports up to 100 lb per bike, for a 200 lb total rack capacity.</p></div>
       <div class="spec" data-show="ramp"><div class="n">key feature</div><h4><em>Built-in ramp</em></h4><p>Roll bikes up — no heavy lifting. The hero feature.</p></div>
       <div class="spec"><div class="n">secure</div><h4>Adjustable straps</h4><p>Ratchet to any wheelbase; protect the frame from scratches.</p></div>
       <div class="spec" data-show="fatTire"><div class="n">fit</div><h4><em>5″</em> fat-tire support</h4><p>Ultra-wide cradles fit tires up to 5″ wide.</p></div>
@@ -293,6 +318,18 @@
       <div class="spec" data-show="tilt"><div class="n">access</div><h4><em>Tilt-away</em></h4><p>Tilts back for trunk access with bikes still loaded.</p></div>
       <div class="spec"><div class="n">weight</div><h4>Lightweight aluminum</h4><p>≈ ⅓ the weight of steel racks — easy to handle.</p></div>
       <div class="spec"><div class="n">fit</div><h4>Universal 2″ hitch</h4><p>Fits sedans, trucks, SUVs, RVs. 1.25″ adaptor available.</p></div>
+      <div class="spec" data-show="rack4148"><div class="n">support</div><h4><em>1-year warranty</em></h4><p>Includes a one-year warranty and a dedicated support team for concerns or issues.</p></div>
+    </div>
+    <div class="specs" data-show="etrike">
+      <div class="spec"><div class="n">maximum load</div><h4><em>200 lb</em> capacity</h4><p>Reinforced carrier designed specifically for compatible adult electric tricycles and e-trikes.</p></div>
+      <div class="spec"><div class="n">construction</div><h4>Steel + aluminum</h4><p>Premium steel-and-aluminum structure for sturdiness, anti-rust performance, and long-lasting outdoor durability.</p></div>
+      <div class="spec"><div class="n">loading</div><h4><em>3 integrated ramps</em></h4><p>Roll all three wheels onto the carrier for easier single-person loading and unloading without heavy lifting.</p></div>
+      <div class="spec"><div class="n">adjustment</div><h4>Multi-direction fit</h4><p>Middle and outermost rails adjust front, back, left, and right; the innermost rail adjusts left and right.</p></div>
+      <div class="spec"><div class="n">fit range</div><h4><em>58″ / 36″</em></h4><p>Fits compatible e-trikes up to 58″ wheelbase and 36″ track width.</p></div>
+      <div class="spec"><div class="n">wheel fit</div><h4>Adjustable wheel cradles</h4><p>Accommodate various wheel sizes, including compatible fat-tire e-trikes.</p></div>
+      <div class="spec"><div class="n">secure</div><h4>3-point tie-down straps</h4><p>Secure the tires to help eliminate sway, shaking, and shifting during travel.</p></div>
+      <div class="spec"><div class="n">storage</div><h4><em>Foldable design</em></h4><p>Folds up when not in use; return all loading ramps to their designated storage positions in the correct order.</p></div>
+      <div class="spec"><div class="n">receiver</div><h4><em>2″ hitch</em></h4><p>Designed for a 2″ receiver and listed for compatible cars, SUVs, trucks, and RVs.</p></div>
     </div>
     <div class="specs jack-specs" data-show="jack">
       <div class="spec"><div class="n">dynamic load</div><h4><em data-field="cap">7,500</em> lb</h4><p>Show it raising and lowering a real, properly supported trailer tongue.</p></div>
@@ -315,6 +352,13 @@
     </div>
   </section>
 
+  <!-- ============ CREATOR REFERENCES ============ -->
+  <section id="references" hidden>
+    <div class="sec-head"><span class="sec-num">REF</span><h2>Creator reference videos</h2></div>
+    <p class="sec-sub">Previous creator videos for this exact product number. Use them for shot ideas, pacing, demonstrations, and real-world test inspiration — keep your own review natural and original.</p>
+    <div class="video-grid" id="referenceVideos"></div>
+  </section>
+
   <!-- ============ 02 MUST-HAVES ============ -->
   <section id="must">
     <div class="sec-head"><span class="sec-num">02</span><h2>Must-haves — the pass / reshoot line</h2></div>
@@ -324,16 +368,31 @@
       <div class="grp"><h4>Say it</h4><ul class="check">
         <li>Say the brand + full product name clearly on camera: <b>“<span data-field="spokenName">OUTFITR / Young Electric — 2-Bike Hitch E-bike Rack with Ramp</span>.”</b></li>
         <li>Put the <b>product-page link</b> in the description.</li>
-        <li data-show="rack">Include the hashtags <code>#OUTFITR</code> <code>#EbikeRack</code>.</li>
+        <li data-show="standardRack">Include the hashtags <code>#OUTFITR</code> <code>#EbikeRack</code>.</li>
+        <li data-show="etrike">Include the hashtags <code>#OUTFITR</code> <code>#EtrikeRack</code>.</li>
         <li data-show="jack7500">Include the hashtags <code>#Polestar</code> <code>#TrailerJack</code>.</li>
         <li data-show="jack5000">Include all five hashtags: <code>#POLESTAR</code> <code>#ElectricTrailerJack</code> <code>#TongueJack</code> <code>#PowerJack</code> <code>#5000LBS</code>.</li>
       </ul></div>
-      <div class="grp" data-show="rack"><h4>Show it — with real testing, not just talking</h4><ul class="check">
+      <div class="grp" data-show="standardRack"><h4>Show it — with real testing, not just talking</h4><ul class="check">
         <li><span data-show="ramp">Demonstrate the <b>ramp</b> loading a bike, </span>the <b>adjustable straps</b>, <span data-show="fold">the <b>easy folding</b>, </span><span data-show="tilt">the <b>tilt access</b>, </span>and <b>universal fit</b> on your hitch.</li>
         <li>Use at least <b>one real e-bike</b><span data-show="multibike"> (two if you have them — it shows the multi-bike + safety-space feature)</span>.</li>
       </ul></div>
+      <div class="grp" data-show="etrike"><h4>4209 — show every official product-page point</h4><ul class="check">
+        <li>Use a <b>real compatible e-trike</b> and refer to model 4209 consistently as an <b>e-trike carrier</b>.</li>
+        <li>State and show the <b>200 lb maximum capacity</b> and the <b>steel-and-aluminum structure</b>.</li>
+        <li>Deploy all <b>three integrated loading ramps</b> and demonstrate single-person e-trike loading and unloading without heavy lifting.</li>
+        <li>Show the adjustment directions: the <b>middle and outermost rails move front / back / left / right</b>; the <b>innermost rail moves left / right</b>.</li>
+        <li>Measure the e-trike and state the fit limits: up to <b>58″ wheelbase</b> and <b>36″ track width</b>.</li>
+        <li>Show the <b>adjustable wheel cradles</b> fitting the wheels, including compatible fat tires, and tighten the <b>3-point tie-down straps</b> around the tires.</li>
+        <li>Demonstrate the <b>foldable structure</b>, then return the three ramps to their designated storage positions <b>in the correct order</b>.</li>
+        <li>Show installation in a <b>2″ receiver</b> and confirm compatibility with the specific vehicle and e-trike used for filming.</li>
+      </ul></div>
       <div class="grp" data-show="rack"><h4>Road test — required, not optional</h4><ul class="check">
         <li>A <b>real-world road test</b> beyond gentle turns: include <b>rough / uneven terrain</b> — dirt roads, speed bumps, inclines or declines — to prove stability and durability.</li>
+      </ul></div>
+      <div class="grp" data-show="rack4148"><h4>4148 official product-page points — say both</h4><ul class="check">
+        <li>The rack supports <b>up to 100 lb per bike</b>, with a <b>200 lb total capacity</b>.</li>
+        <li>It includes a <b>one-year warranty</b> and a <b>dedicated support team</b> for concerns or issues.</li>
       </ul></div>
       <div class="grp" data-show="jack"><h4>Show it — with a real trailer, not just talking</h4><ul class="check">
         <li>Install it correctly on an <b>A-frame trailer</b>, then show the <b><span data-field="power">12V DC · 7-way plug</span></b> connection before operating.</li>
@@ -370,7 +429,8 @@
   <section>
     <div class="rule"><div class="mk">“</div><div>
       <h3>The one filming rule that makes these videos work</h3>
-      <p data-show="rack">Stop talking while you operate. Show the action and <b>let the mechanical sounds carry it</b> — the ramp locking in, the ratchet clicking, the frame folding shut. Record those clean, and save voiceover for before or after the action, not on top of it. <b>Show, don't narrate.</b></p>
+      <p data-show="standardRack">Stop talking while you operate. Show the action and <b>let the mechanical sounds carry it</b> — the ramp locking in, the ratchet clicking, the frame folding shut. Record those clean, and save voiceover for before or after the action, not on top of it. <b>Show, don't narrate.</b></p>
+      <p data-show="etrike">Stop talking while you operate. Show the full action and keep the clean mechanical sounds — deploying three ramps, adjusting the rails, tightening the tire straps, and folding the carrier. Save voiceover for before or after each action. <b>Show the complete e-trike setup clearly.</b></p>
       <p data-show="jack">Stop talking while you operate. Get clean sound from the <b>motor, switch, drop-leg pin, and coupler</b>. Save voiceover for before or after each action so viewers can hear how the jack really works. <b>Show the full cycle—don't hide it behind cuts.</b></p>
     </div></div>
   </section>
@@ -378,10 +438,11 @@
   <!-- ============ 03 THE SHOOT ============ -->
   <section id="shoot">
     <div class="sec-head"><span class="sec-num">03</span><h2>The shoot — shot by shot</h2></div>
-    <p class="sec-sub" data-show="rack">A ~10-minute flow that hits every requirement. Timecodes are a guide; the road test is the longest, most important stretch. <em>SAY</em> lines are talking points to put in your own words — never read verbatim. The reference frames under each step are real examples of the shot we want.</p>
+    <p class="sec-sub" data-show="standardRack">A ~10-minute flow that hits every requirement. Timecodes are a guide; the road test is the longest, most important stretch. <em>SAY</em> lines are talking points to put in your own words — never read verbatim. The reference frames under each step are real examples of the shot we want.</p>
+    <p class="sec-sub" data-show="etrike">A ~10-minute e-trike-specific flow covering fit measurement, all three ramps, multi-direction rail adjustment, securement, folding, and a real road test. <em>SAY</em> lines are talking points to put in your own words — never read verbatim.</p>
     <p class="sec-sub" data-show="jack">A ~10-minute flow built around a real installation and repeated loaded operation. Timecodes are a guide. <em>SAY</em> lines are prompts to put in your own words—never read them verbatim.</p>
 
-    <div class="shots" data-show="rack">
+    <div class="shots" data-show="standardRack">
 
       <div class="shot">
         <div class="hd"><span class="tc req">00:00–00:30</span><span class="st">STEP 1</span><h3>Hook — the struggle</h3><span class="flag r">Required</span></div>
@@ -396,7 +457,7 @@
         <div class="hd"><span class="tc">00:30–01:00</span><span class="st">STEP 2</span><h3>Unbox &amp; first look</h3><span class="flag o">Recommended</span></div>
         <div class="bd">
           <div class="row"><span class="lab">Shoot</span><span class="val">Overhead / top-down on a garage floor or lawn. Open the box on camera and introduce the product as you unbox.</span></div>
-          <div class="row say"><span class="lab">Say</span><span class="val">This is the <span data-field="name">2-Bike Hitch E-bike Rack with Ramp</span> — built for heavy e-bikes, up to <span data-field="cap">200</span> pounds total. <span data-show="ramp">Best part: a built-in ramp, so no more struggling to lift your bike. </span>Let's see what's inside.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">This is the <span data-field="name">2-Bike Hitch E-bike Rack with Ramp</span> — built for heavy e-bikes, up to <span data-field="cap">200</span> pounds total.<span data-show="rack4148"> For model 4148, that's up to 100 pounds per bike.</span> <span data-show="ramp">Best part: a built-in ramp, so no more struggling to lift your bike. </span>Let's see what's inside.</span></div>
           <div class="row tip"><span class="lab">Tip</span><span class="val">Skip filming the full frame assembly — it's slow to watch. Assemble off-camera and pick up at install.</span></div>
         </div>
         <div class="frames"><div class="cap">// Reference frames — STEP 2</div><img src="imgs/step2.jpg" alt="Unboxing reference frames" loading="lazy"></div>
@@ -498,10 +559,84 @@
         <div class="bd">
           <div class="row"><span class="lab">Shoot</span><span class="val">On camera, in a natural scenic spot — no script in hand. Give a genuine, casual summary of your day with it. On screen, show the purchase link, discount code, and a nudge to like &amp; subscribe.</span></div>
           <div class="row say"><span class="lab">Say</span><span class="val">Honest review after a full day: install was easier than I expected,<span data-show="ramp"> the ramp is the most practical I've used at this price,</span> and nothing budged the whole road test. Link and a discount are below — if this helped, like and subscribe. See you next time.</span></div>
+          <div class="row" data-show="rack4148"><span class="lab">Support</span><span class="val">Before the CTA, mention that model 4148 includes a <b>one-year warranty</b> and a <b>dedicated support team</b> for concerns or issues.</span></div>
         </div>
         <div class="frames"><div class="cap">// Reference frames — STEP 11</div><img src="imgs/step12.jpg" alt="Summary reference frames" loading="lazy"></div>
       </div>
 
+    </div>
+
+    <div class="shots" data-show="etrike">
+      <div class="shot">
+        <div class="hd"><span class="tc req">00:00–00:35</span><span class="st">STEP 1</span><h3>Hook — transporting a heavy e-trike</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Open on the real challenge of moving a heavy adult e-trike. Cut to three quick previews: all three ramps deployed, the e-trike rolling onto the carrier, and all three wheels secured.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">This carrier is designed specifically for an e-trike. Instead of lifting, I can adjust the rails, deploy three ramps, and roll all three wheels into place.</span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">00:35–01:25</span><span class="st">STEP 2</span><h3>Identify the 4209 and inspect the structure</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Show the product label, full carrier, three ramps, wheel cradles, straps, folding points, and hitch connection. Capture close-ups of the steel-and-aluminum structure.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">This is the <span data-field="spokenName">OUTFITR E-Trike Hitch Rack</span>, designed for compatible adult electric tricycles and rated for a maximum load of 200 pounds.</span></div>
+          <div class="row"><span class="lab">Build</span><span class="val">Mention the premium steel-and-aluminum construction and the product page's listed sturdiness, anti-rust performance, and long-lasting outdoor durability.</span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">01:25–02:30</span><span class="st">STEP 3</span><h3>Install in the 2″ receiver</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Install the empty carrier in the vehicle's 2″ hitch receiver according to the supplied instructions. Show the receiver connection and the carrier sitting level before loading.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">The product page specifies a 2-inch receiver and lists compatible cars, SUVs, trucks, and RVs. Always confirm the exact vehicle, hitch, e-trike dimensions, and load ratings before use.</span></div>
+          <div class="row"><span class="lab">Storage</span><span class="val">Show where the three ramps are stored and their designated order before removing them.</span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">02:30–04:00</span><span class="st">STEP 4</span><h3>Measure the e-trike and adjust the carrier</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Measure</span><span class="val">Measure the e-trike on camera. Confirm that its wheelbase is no more than 58″ (147 cm) and its track width is no more than 36″ (92 cm).</span></div>
+          <div class="row"><span class="lab">Adjust</span><span class="val">Show the middle and outermost rails moving front, back, left, and right. Then show the innermost rail moving left and right. Align all three wheel cradles with the e-trike before loading.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">The multi-direction adjustment is what lets this carrier fit compatible e-trikes of different widths and lengths.</span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">04:00–05:30</span><span class="st">STEP 5</span><h3>Deploy three ramps and load the e-trike</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Deploy all three integrated ramps in their correct positions. From a wide side angle and two wheel-level close-ups, show one person rolling the e-trike directly onto the carrier without heavy lifting.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">All three wheels have a ramp, so a compatible e-trike can be rolled on and off by one person while saving time and physical effort.</span></div>
+          <div class="row"><span class="lab">Fit</span><span class="val">Show the adjustable wheel cradles accepting the actual wheel size; include close-ups if the e-trike uses fat tires.</span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">05:30–06:45</span><span class="st">STEP 6</span><h3>Secure all three wheels</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Tighten the sturdy 3-point tie-down straps around the tires. Film each securement point, the wheel cradles, and a final walk-around confirming that all three wheels are held in place.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">The adjustable cradles fit different wheel sizes, and the 3-point tire straps are designed to help eliminate sway, shaking, and shifting during travel.</span></div>
+          <div class="row"><span class="lab">Check</span><span class="val">Before driving, confirm the e-trike, straps, wheel cradles, ramps, folding mechanism, and hitch connection are all correctly positioned and secure.</span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">06:45–09:15</span><span class="st">STEP 7</span><h3>Loaded stability and real road test</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">First perform a parked, hands-on stability check. Then record a lawful real-world drive with the loaded e-trike, showing normal turns, stops, and uneven pavement from safe camera positions.</span></div>
+          <div class="row"><span class="lab">Pit stop</span><span class="val">Stop on level ground and recheck all three tire straps, wheel cradles, the folding structure, and the 2″ receiver connection. Show whether anything loosened or shifted.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">After the road test, all three wheels are still secured and the e-trike has stayed in position. This is the product page's anti-sway, anti-shaking, and anti-shifting claim tested in real use.</span></div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="hd"><span class="tc req">09:15–end</span><span class="st">STEP 8</span><h3>Unload, fold, store the ramps, and conclude</h3><span class="flag r">Required</span></div>
+        <div class="bd">
+          <div class="row"><span class="lab">Shoot</span><span class="val">Deploy all three ramps, release the tire straps, and roll the e-trike down safely. With the carrier empty, demonstrate the folding structure and pull it up for storage.</span></div>
+          <div class="row"><span class="lab">Order</span><span class="val">Return all three loading ramps to their designated storage positions in the correct order and show the completed storage arrangement clearly.</span></div>
+          <div class="row say"><span class="lab">Say</span><span class="val">The biggest advantages are the e-trike-specific adjustment, three-ramp loading, secure three-wheel fixation, and a foldable design that is easier to store. The OUTFITR product link is in the description.</span></div>
+        </div>
+      </div>
     </div>
 
     <div class="shots" data-show="jack">
@@ -586,8 +721,9 @@
   <section id="say">
     <div class="sec-head"><span class="sec-num">04</span><h2>Talking points — say them your way</h2></div>
     <p class="sec-sub">Grab-and-go lines for when you're not sure what to say. Put them in your own words on camera — <b>don't read them aloud</b>. Every claim here is true and safe to make.</p>
-    <div class="lines" data-show="rack">
+    <div class="lines" data-show="standardRack">
       <div class="line"><span class="who">Capacity</span>Rated to <span data-field="cap">200</span> pounds total, so it actually handles a heavy fat-tire e-bike — not just a road bike.</div>
+      <div class="line" data-show="rack4148"><span class="who">4148 · per-bike capacity</span>Model 4148 supports up to 100 pounds per bike, with a 200-pound total rack capacity.</div>
       <div class="line" data-show="ramp"><span class="who">Ramp</span>The built-in ramp means you roll the bike up instead of dead-lifting it onto a rack.</div>
       <div class="line"><span class="who">Weight</span>It's aluminum — about a third the weight of a steel rack — so getting it on and off the car isn't a workout.</div>
       <div class="line"><span class="who">Security</span>Ratcheting straps fit any wheelbase and the cradle wraps the tire, so nothing rubs or scratches your frame.</div>
@@ -596,6 +732,19 @@
       <div class="line" data-show="fold"><span class="who">Folding</span>Empty, it folds flat against the car — no wasted garage or parking space.</div>
       <div class="line" data-show="tilt"><span class="who">Tilt</span>It tilts back so you can reach the trunk even with the bikes loaded.</div>
       <div class="line"><span class="who">Fit</span>Drops onto any standard 2-inch hitch — cars, trucks, SUVs, RVs — with a 1.25-inch adaptor available.</div>
+      <div class="line" data-show="rack4148"><span class="who">4148 · support</span>Model 4148 includes a one-year warranty and a dedicated support team for concerns or issues.</div>
+    </div>
+    <div class="lines" data-show="etrike">
+      <div class="line"><span class="who">E-trike purpose</span>Model 4209 is designed specifically for compatible adult electric tricycles and e-trikes; refer to it consistently as an e-trike carrier.</div>
+      <div class="line"><span class="who">Capacity</span>The maximum listed load is 200 pounds.</div>
+      <div class="line"><span class="who">Construction</span>The premium steel-and-aluminum structure is described as sturdy, anti-rust, and built for long-lasting outdoor durability.</div>
+      <div class="line"><span class="who">Three ramps</span>Three integrated ramps let all three wheels roll directly onto the carrier for easier single-person loading and unloading.</div>
+      <div class="line"><span class="who">Adjustment</span>The middle and outermost rails adjust front, back, left, and right; the innermost rail adjusts left and right.</div>
+      <div class="line"><span class="who">Fit limits</span>The listed maximum fit is a 58-inch wheelbase and a 36-inch track width.</div>
+      <div class="line"><span class="who">Wheel fit</span>Adjustable wheel cradles accommodate various wheel sizes, including compatible fat-tire e-trikes.</div>
+      <div class="line"><span class="who">Securement</span>Sturdy 3-point tie-down straps secure the tires and are designed to help eliminate sway, shaking, and shifting while driving.</div>
+      <div class="line"><span class="who">Storage</span>The carrier folds up when not in use; all three ramps must return to their designated storage positions in the correct order.</div>
+      <div class="line"><span class="who">Vehicle fit</span>The product page specifies a 2-inch receiver and lists compatible cars, SUVs, trucks, and RVs.</div>
     </div>
     <div class="lines" data-show="jack">
       <div class="line"><span class="who">Dynamic load</span>Rated for a <span data-field="cap">7,500</span>-pound dynamic load during powered raising and lowering.</div>
@@ -624,7 +773,8 @@
         <li>Keep it <b>≥ 10 minutes</b> and mostly outdoors.</li>
         <li><b>Send us the preview first</b> — publish only once approved.</li>
         <li>Upload within <b>10 days</b> of receiving the product.</li>
-        <li data-show="rack">Add the product link + <code style="font-family:var(--mono);font-size:16px">#OUTFITR #EbikeRack</code>.</li>
+        <li data-show="standardRack">Add the product link + <code style="font-family:var(--mono);font-size:16px">#OUTFITR #EbikeRack</code>.</li>
+        <li data-show="etrike">Add the OUTFITR product link + <code style="font-family:var(--mono);font-size:16px">#OUTFITR #EtrikeRack</code>.</li>
         <li data-show="jack7500">Add the Amazon product link + <code style="font-family:var(--mono);font-size:16px">#Polestar #TrailerJack</code>.</li>
         <li data-show="jack5000">Add the Amazon product link + <code style="font-family:var(--mono);font-size:16px">#POLESTAR #ElectricTrailerJack #TongueJack #PowerJack #5000LBS</code>.</li>
         <li>Be objective — the honest, real-world review is what viewers trust.</li>
@@ -662,22 +812,109 @@ const PRODUCTS = {
   "4157": {name:"Single Hitch E-Bike Rack with Ramp, Foldable", cap:100, bikes:1, ramp:true, fold:true, tilt:false, fatTire:true, style:"platform", url:"https://outfitrer.com/products/1-bike-hitch-e-bike-rack-with-ramp-folding-single-electric-bike-carrier-100-lbs-capacity-fits-2-receiver", youngUrl:"https://youngelectricbikes.com/collections/sale/products/1-bike-hitch-e-bike-rack-with-ramp-folding-single-electric-bike-carrier-100-lbs-capacity-fits-2-receiver"},
   "4149": {name:"Single Hitch E-Bike Rack with Ramp", cap:100, bikes:1, ramp:true, fold:false, tilt:false, fatTire:true, style:"platform", url:"https://outfitrer.com/products/1-bike-hitch-rack-with-ramp-lightweight-bike-carrier-100-lbs-capacity-fits-2-receiver", youngUrl:"https://youngelectricbikes.com/collections/sale/products/1-bike-hitch-e-bike-rack-with-ramp-lightweight-single-electric-bike-carrier-100-lbs-capacity-fits-2-receiver"},
   "4156": {name:"3-Bike Hitch E-Bike Rack with Ramp, Foldable", cap:250, bikes:3, ramp:true, fold:true, tilt:true, fatTire:true, style:"platform", url:"https://outfitrer.com/products/3-bike-hitch-e-bike-rack-with-ramp-fat-tire-electric-bike-carrier-250-lbs-capacity-fits-2-receiver", youngUrl:"https://youngelectricbikes.com/collections/sale/products/3-bike-hitch-e-bike-rack-with-ramp-fat-tire-electric-bike-carrier-250-lbs-capacity-fits-2-receiver"},
-  "4209": {name:"Etrike Hitch Rack, Adjustable Carrier for Adult Electric Trikes", cap:200, bikes:1, ramp:true, fold:true, tilt:false, fatTire:true, style:"etrike", url:"https://outfitrer.com/collections/savings/products/etrike-hitch-rack-200lbs-capacity-2-receiver-adjustable-carrier-for-adult-electric-fat-tir", youngUrl:"https://youngelectricbikes.com/collections/sale/products/200lbs-hitch-mount-trike-rack-with-2-receiver-adjustable-carrier-for-adult-electric-fat-tire-folding-tricycles-fits-cars-suvs-trucks-rvs"},
+  "4209": {category:"etrike", brand:"OUTFITR", name:"E-Trike Hitch Rack — 200 lb Capacity, Adjustable Carrier", spokenName:"OUTFITR E-Trike Hitch Rack — 200 lb Capacity", cap:200, bikes:1, ramp:true, fold:true, tilt:false, fatTire:true, style:"etrike", url:"https://outfitrer.com/products/etrike-hitch-rack-200lbs-capacity-2-receiver-adjustable-carrier-for-adult-electric-fat-tire-folding-tricycles-fits-cars-suvs-trucks-rvs", youngUrl:"https://youngelectricbikes.com/collections/sale/products/200lbs-hitch-mount-trike-rack-with-2-receiver-adjustable-carrier-for-adult-electric-fat-tire-folding-tricycles-fits-cars-suvs-trucks-rvs"},
   "7500": {category:"jack", brand:"Polestar", name:"7500 lbs Trailer Jack", spokenName:"Polestar 7500 lbs Trailer Jack", cap:7500, staticCap:10000, power:"12V DC via 7-way plug", powerShort:"7-way plug", url:"https://www.amazon.com/dp/B0G4CSMWCG"},
   "5000": {category:"jack", brand:"Polestar", name:"5000 lbs Trailer Jack", spokenName:"Polestar 5000 LBS Electric Trailer Jack", cap:5000, staticCap:7500, power:"12V DC · hard-wired", powerShort:"hard-wired", url:"https://www.amazon.com/dp/B09W5FS6ZD?th=1"},
 };
 const ORDER = ["4148","4155","4197","4118","4095","4186","4190","4157","4149","4156","4209","7500","5000"];
 
+const REFERENCE_VIDEOS = {
+  "4209": [
+    {id:"T-Vsg4uTbiE", creator:"CitizenCycle", title:"Electric Trike Hitch Rack — 200 lb Carrier Review, Assembly & Loading Test"}
+  ],
+  "4148": [
+    {id:"n96C08qpD2c", creator:"Heartland Makes & Outdoors", title:"Don't Haul Your E-Bike Until You Watch This — Young Folding E-Bike Rack"},
+    {id:"SX2m4SgNLyQ", creator:"senderoni5oh", title:"This E-Bike Rack Can Hold 200 lb — OUTFITR / Young Electric Rack"},
+    {id:"RPgBARelZUY", creator:"The Garage Studio", title:"Protect Your E-Bikes When Traveling — Stability Test"},
+    {id:"bNU3I1IK_lg", creator:"E Bike Nation", title:"OUTFITR Rack in Action"}
+  ],
+  "4186": [
+    {id:"IlBCojNKIbo", creator:"Bryce Thomas", title:"Testing the Young 200 lb Rack with 162 lb of E-Bikes"},
+    {id:"dsi-w0l12YM", creator:"Cool Bike Projects", title:"OUTFITR 200 lb Tire-Hold 2 E-Bike Rack Review", start:53},
+    {id:"I-CzBcS71fs", creator:"Sploosh MTB", title:"This Rack Does the Heavy Lifting for You"},
+    {id:"ovlIBonwKMk", creator:"Electron Surfer", title:"Say Goodbye to Frame Damage — OUTFITR Rack Review"}
+  ],
+  "4156": [
+    {id:"iqU2yDFx-iE", creator:"GearChase", title:"Can This OUTFITR Rack Haul 3 Heavy E-Bikes?"}
+  ],
+  "4149": [
+    {id:"NS7CFl7_UYs", creator:"The Shed", title:"Young Electric Single E-Bike Rack Review"}
+  ],
+  "4118": [
+    {id:"dBhGP4G1gLk", creator:"FatGuyTinkering2", title:"OUTFITR 4118 — Budget E-Bike Rack Review"},
+    {id:"BN3xQUdjhmM", creator:"Cool Bike Projects", title:"White Rim Adventure — 1,000-Mile Road Test"},
+    {id:"-IEagExnFEg", creator:"The Biking Fellow", title:"Testing the OUTFITR 2-Bike Hitch Rack in Different Places"},
+    {id:"eAK5kJPNKtM", creator:"Austin Rides", title:"OUTFITR 2-Bike Hitch Rack — Review & Test"},
+    {id:"UYNgSPE0aYE", creator:"Random Adventures", title:"OUTFITR Rockland Rack Assembly, Fold & Tilt"}
+  ],
+  "4155": [
+    {id:"9aPXfOzoebU", creator:"PhotonPhotographyNJ", title:"OUTFITR E-Bike Rack Review — Strong, Secure & Easy to Use"}
+  ],
+  "4190": [
+    {id:"DRMqiC84Jvg", creator:"E Biking Today", title:"OUTFITR Camo 2-Bike Hitch Rack with Ramp"}
+  ]
+};
+
+/* 4197 uses the same five creator references as 4118. */
+REFERENCE_VIDEOS["4197"] = REFERENCE_VIDEOS["4118"];
+
+function renderReferenceVideos(sku){
+  const section = document.getElementById('references');
+  const grid = document.getElementById('referenceVideos');
+  const videos = REFERENCE_VIDEOS[sku] || [];
+  section.hidden = videos.length === 0;
+  grid.replaceChildren();
+  videos.forEach(v=>{
+    const watchUrl = `https://www.youtube.com/watch?v=${encodeURIComponent(v.id)}${v.start?`&t=${v.start}s`:''}`;
+    const link = document.createElement('a');
+    link.className = 'video-card';
+    link.href = watchUrl;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.setAttribute('aria-label', `${v.creator}: ${v.title} — watch on YouTube`);
+
+    const thumb = document.createElement('span');
+    thumb.className = 'video-thumb';
+    const img = document.createElement('img');
+    img.src = `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`;
+    img.alt = `${v.creator} — ${v.title}`;
+    img.loading = 'lazy';
+    img.addEventListener('error', ()=>{ img.hidden = true; });
+    const play = document.createElement('span');
+    play.className = 'video-play';
+    play.setAttribute('aria-hidden','true');
+    play.textContent = '▶';
+    thumb.append(img,play);
+
+    const meta = document.createElement('span');
+    meta.className = 'video-meta';
+    const creator = document.createElement('span');
+    creator.className = 'video-creator';
+    creator.textContent = v.creator;
+    const title = document.createElement('strong');
+    title.className = 'video-title';
+    title.textContent = v.title;
+    const watch = document.createElement('span');
+    watch.className = 'video-watch';
+    watch.textContent = 'Watch on YouTube ↗';
+    meta.append(creator,title,watch);
+    link.append(thumb,meta);
+    grid.append(link);
+  });
+}
+
 const formatNum = n => Number(n).toLocaleString("en-US");
 
 function headline(p){
   if(p.category==='jack') return `${formatNum(p.cap)} lbs Electric <span class="r">Trailer Jack</span>`;
+  if(p.category==='etrike') return `200 lb <span class="r">E-Trike Hitch Rack</span>`;
   const n = p.bikes===1?"1-Bike":p.bikes===3?"3-Bike":"2-Bike";
   const ft = p.fatTire ? "Fat-Tire " : "";
   return `${n} Hitch ${ft}E-bike Rack${p.ramp?' <span class="r">with Ramp</span>':''}`;
 }
 function shortlabel(p){
   if(p.category==='jack') return `electric trailer jack\n${formatNum(p.cap)} lb`;
+  if(p.category==='etrike') return `e-trike · 3 ramps · fold\n${formatNum(p.cap)} lb`;
   return [p.bikes+"-bike", p.ramp?"ramp":"no-ramp", p.fold?"fold":"fixed", p.tilt?"tilt":null].filter(Boolean).join(" · ")+"\n"+p.cap+" lb";
 }
 
@@ -700,12 +937,15 @@ function apply(sku){
     else if(k==='youngUrl') el.setAttribute('href', p.youngUrl || YG_HOME);
   });
   const isJack = p.category==='jack';
-  const cond = { rack:!isJack, jack:isJack, jack5000:isJack && sku==='5000', jack7500:isJack && sku==='7500', ramp:!isJack && p.ramp, noramp:!isJack && !p.ramp, fold:!isJack && p.fold, nofold:!isJack && !p.fold, tilt:!isJack && p.tilt, notilt:!isJack && !p.tilt,
-    multibike:p.bikes>=2, onebike:p.bikes===1, threebike:p.bikes===3, fatTire:p.fatTire,
-    platform:p.style==='platform', tireclamp:p.style==='tire-clamp' };
+  const isEtrike = p.category==='etrike';
+  const isStandardRack = !isJack && !isEtrike;
+  const cond = { rack:!isJack, standardRack:isStandardRack, etrike:isEtrike, rack4148:isStandardRack && sku==='4148', jack:isJack, jack5000:isJack && sku==='5000', jack7500:isJack && sku==='7500', ramp:isStandardRack && p.ramp, noramp:isStandardRack && !p.ramp, fold:isStandardRack && p.fold, nofold:isStandardRack && !p.fold, tilt:isStandardRack && p.tilt, notilt:isStandardRack && !p.tilt,
+    multibike:isStandardRack && p.bikes>=2, onebike:isStandardRack && p.bikes===1, threebike:isStandardRack && p.bikes===3, fatTire:isStandardRack && p.fatTire,
+    platform:isStandardRack && p.style==='platform', tireclamp:isStandardRack && p.style==='tire-clamp' };
   document.querySelectorAll('[data-show]').forEach(el=>{ el.hidden = !cond[el.getAttribute('data-show')]; });
   document.querySelectorAll('.pcard').forEach(c=> c.classList.toggle('selected', c.dataset.sku===sku));
   document.title = `${sku} · ${p.name} — Creator Shooting Brief`;
+  renderReferenceVideos(sku);
 }
 
 (function(){
