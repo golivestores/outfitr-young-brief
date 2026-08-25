@@ -89,10 +89,11 @@
   .sec-sub{color:var(--moss-ink); max-width:64ch; margin:12px 0 24px; font-size:19px; line-height:1.65}
 
   /* ===== desktop product sidebar ===== */
-  main.brief-layout{width:min(1280px,100%); margin:0 auto; padding:0 22px; display:grid; grid-template-columns:270px minmax(0,1fr); gap:28px; align-items:start}
-  .content-wrap{min-width:0}
-  .product-sidebar{position:sticky; top:65px; align-self:start; max-height:calc(100vh - 65px); overflow-y:auto; overscroll-behavior:contain; background:linear-gradient(180deg,#EEF0EB,#E7EAE2); border:1px solid var(--line); border-top:none; border-radius:0 0 10px 10px; scrollbar-width:thin; scrollbar-color:var(--moss) transparent}
-  #pick{padding:25px 15px 28px; border-top:none; scroll-margin-top:65px}
+  .brief-shell{width:min(1280px,100%); margin:0 auto; padding:0 22px; display:grid; grid-template-columns:270px minmax(0,1fr); gap:28px; align-items:start}
+  .brief-column,.content-wrap{min-width:0}
+  main.brief-main{min-width:0}
+  .product-sidebar{position:sticky; top:53px; align-self:start; max-height:calc(100vh - 53px); overflow-y:auto; overscroll-behavior:contain; background:linear-gradient(180deg,#EEF0EB,#E7EAE2); border:1px solid var(--line); border-top:none; border-radius:0 0 10px 10px; scrollbar-width:thin; scrollbar-color:var(--moss) transparent}
+  #pick{padding:25px 15px 28px; border-top:none; scroll-margin-top:53px}
   #pick .sec-head{align-items:flex-start; gap:8px; margin-bottom:6px}
   #pick .sec-num{font-size:14px; padding-top:3px}
   #pick h2{font-size:22px; line-height:1.17}
@@ -120,7 +121,9 @@
   .product-sidebar .pcard .pl{font-size:13px; line-height:1.35; align-self:start; overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical}
 
   @media(min-width:901px){
-    header.hero .wrap{max-width:1280px; padding-left:320px}
+    .brief-column header.hero{margin-left:-28px}
+    .brief-column header.hero .wrap{max-width:none; padding-left:28px; padding-right:0}
+    .brief-column header.hero h1,.brief-column header.hero .lede{width:100%}
   }
   @media(max-width:900px){
     html{scroll-padding-top:116px}
@@ -128,7 +131,10 @@
     nav.bar .brand{width:100%; font-size:13px; white-space:normal; line-height:1.3}
     nav.bar .cur{display:none}
     .mobile-product-picker{width:100%; display:grid; grid-template-columns:auto minmax(0,1fr); align-items:center; gap:10px}
-    main.brief-layout{display:block; max-width:var(--wrap); padding:0 22px}
+    .brief-shell{display:block; width:100%; padding:0}
+    .brief-column header.hero{margin-left:0}
+    .brief-column header.hero .wrap{max-width:var(--wrap); padding-left:22px; padding-right:22px}
+    main.brief-main{max-width:var(--wrap); margin:0 auto; padding:0 22px}
     .product-sidebar{display:none}
     section{scroll-margin-top:116px}
   }
@@ -259,6 +265,19 @@
   </label>
 </div></nav>
 
+<div class="brief-shell">
+
+  <!-- ============ PRODUCT PICKER ============ -->
+  <aside class="product-sidebar" aria-label="Product selector">
+    <section id="pick">
+      <div class="sec-head"><span class="sec-num">★</span><h2>Which product are you reviewing?</h2></div>
+      <p class="sec-sub">Tap your product below — the whole brief (specs, steps, talking points) retunes to it. The number is our internal reference; match it to your shipment.</p>
+      <div class="prod-grid" id="grid"></div>
+    </section>
+  </aside>
+
+  <div class="brief-column">
+
 <header class="hero"><div class="wrap">
   <div class="kicker">
     <span class="tag">Creator Shooting Brief</span>
@@ -283,16 +302,7 @@
   </aside>
 </div></header>
 
-<main class="brief-layout">
-
-  <!-- ============ PRODUCT PICKER ============ -->
-  <aside class="product-sidebar" aria-label="Product selector">
-    <section id="pick">
-      <div class="sec-head"><span class="sec-num">★</span><h2>Which product are you reviewing?</h2></div>
-      <p class="sec-sub">Tap your product below — the whole brief (specs, steps, talking points) retunes to it. The number is our internal reference; match it to your shipment.</p>
-      <div class="prod-grid" id="grid"></div>
-    </section>
-  </aside>
+<main class="brief-main">
 
   <div class="content-wrap">
 
@@ -854,6 +864,9 @@
 
   </div><!-- /content-wrap -->
 </main>
+
+  </div><!-- /brief-column -->
+</div><!-- /brief-shell -->
 
 <footer><div class="wrap">
   <span><b data-field="brandfooter">OUTFITR / Young Electric</b> · <span data-field="name">2-Bike Hitch E-bike Rack with Ramp</span> · Model <span data-field="model">4148</span></span>
