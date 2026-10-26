@@ -431,12 +431,20 @@
   footer{background:var(--pine); color:#9FB4A5; padding:30px 0; margin-top:8px; font-family:var(--mono); font-size:16px; letter-spacing:.02em}
   footer .wrap{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap} footer b{color:#EDEFEA}
   @media print{ nav.bar{position:static} .frames{-webkit-print-color-adjust:exact} section{padding:22px 0} }
+
+.goaff-nav{display:block;width:100%;padding:14px 12px;background:var(--pine);color:white;border:2px solid var(--blaze);border-radius:8px;font:700 18px var(--sans);cursor:pointer;text-align:left;flex-shrink:0}.goaff-nav small{display:block;font-size:14px;font-weight:500}.goaff-nav[aria-pressed="true"]{background:var(--blaze-deep)}
+.goaff-figure{margin:22px 0 32px;background:white;border:1px solid var(--line);padding:16px;border-radius:10px}.goaff-figure img{display:block;width:100%;height:auto}.goaff-figure a{cursor:zoom-in}.goaff-figure figcaption{font-size:16px;color:var(--moss-ink);margin-top:12px}#goaff-view header.hero h1,#goaff-view header.hero .lede{width:100%;max-width:100%}#goaff-view header.hero .wrap{padding:0 30px}#goaff-view h3{font-size:23px;margin:28px 0 8px}#goaff-view .eyebrow{color:var(--blaze)}.mobile-goaff{display:none}#goaff-view{grid-column:2;min-width:0}#shot-dialog{border:0;border-radius:12px;padding:44px 12px 12px;max-width:96vw;max-height:94vh}#shot-dialog::backdrop{background:#000b}#shot-dialog img{display:block;width:min(1200px,86vw);height:auto}#shot-dialog button{position:absolute;right:12px;top:8px;padding:5px 12px;cursor:pointer} @media(max-width:1180px){.mobile-goaff{display:block;color:white}#goaff-view{grid-column:auto}}@media(max-width:760px){.goaff-figure{padding:6px;margin:20px 0}#goaff-view h3{font-size:20px}}
+#goaff-view .goaff-intro{padding:16px 24px;margin:14px 0}#goaff-view .goaff-intro p{margin:0;font-size:19px;line-height:1.55}@media(max-width:760px){#goaff-view .goaff-intro{padding:14px 18px;margin:10px 0}#goaff-view .goaff-intro p{font-size:17px}}
+
+.goaff-offer{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}.goaff-offer span{display:block;padding:9px 14px;border:1px solid #617565;border-radius:6px;background:#26362E;color:#EDEFEA;font-size:19px}.goaff-offer b{color:#fff}.goaff-black-friday blockquote{margin:16px 0 20px;padding:20px 24px;background:#EEF0E7;border-left:4px solid var(--blaze);font-size:22px;line-height:1.65;border-radius:0 8px 8px 0}#goaff-view .goaff-black-friday .sec-sub{margin-bottom:14px}@media(max-width:760px){.goaff-offer{gap:8px}.goaff-offer span{font-size:17px;padding:8px 10px}.goaff-black-friday blockquote{font-size:19px;padding:16px}}
+
+#goaff-view .goaff-help{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}#goaff-view .goaff-help h3{margin:0 0 5px;font-size:20px}#goaff-view .goaff-help p{font-size:17px;color:var(--moss-ink);line-height:1.5}
 </style>
 </head>
 <body>
 
 <nav class="bar"><div class="wrap">
-  <span class="brand">OUTFITR · Young Electric · Polestar — Creator Brief</span>
+  <a class="mobile-goaff" href="#goaff">GoAffPro Guide</a><span class="brand">OUTFITR · Young Electric · Polestar — Creator Brief</span>
   <span class="cur"><span class="reviewing-highlight">Reviewing: <b data-field="model">4148</b></span><a href="#pick">↑ change product</a></span>
   <label class="mobile-product-picker" for="mobileProductSelect">
     <span class="mlabel">Product</span>
@@ -451,10 +459,11 @@
     <section id="pick">
       <div class="sec-head"><span class="sec-num">★</span><h2>Which product are you reviewing?</h2></div>
       <p class="sec-sub">Tap your product below — the whole brief (specs, steps, talking points) retunes to it. The number is our internal reference; match it to your shipment.</p>
-      <div class="prod-grid" id="grid"></div>
+      <button class="goaff-nav" type="button" aria-pressed="false">GoAffPro Guide<small>Affiliate link &amp; discount code</small></button><div class="prod-grid" id="grid"></div>
     </section>
   </aside>
 
+<div id="goaff-view" hidden><header class="hero"><div class="wrap"><div class="eyebrow">Creator publishing requirements</div><div class="goaff-offer"><span><b>8%</b> affiliate commission</span><span><b>Extra $15 off</b> with your exclusive discount code</span></div><h1>GoAffPro Link &amp; Discount Code</h1><p class="lede">Include <b>your affiliate link and discount code</b> in the video description, and mention the Black Friday offer in your video.</p></div></header><main class="brief-main"><div class="content-wrap"><section class="goaff-black-friday"><h2>Black Friday Spoken Mention</h2><p class="sec-sub">Use your partner brand’s name in the example below.</p><blockquote>“OutfitR / Young Electric is running a Black Friday sale with 50% off sitewide! Plus, you can use my exclusive discount code for an extra $15 off. I'll leave the shopping link and discount code in the description below!”</blockquote></section><section class="goaff-intro"><p>After we create your account, GoAffPro will send an invitation to your account’s email address. No email? Follow <a href="#goaff-a">Option A</a>. Invitation received? Follow <a href="#goaff-b">Option B</a>.</p></section><section id="goaff-a"><span class="eyebrow">Option A</span><h2>If you have NOT received an invitation email</h2><h3>1. Open your brand’s registration page</h3><p><a href="https://outfitrer.goaffpro.com/create-account" target="_blank" rel="noopener">OutfitR · Create account ↗</a><br><a href="https://youngelectricbikes.goaffpro.com/create-account" target="_blank" rel="noopener">Young Electric · Create account ↗</a></p><h3>2. Create your account</h3><p>Enter your name, email address, and password.</p><figure class="goaff-figure"><a href="imgs/goaff/step-1.png" class="zoom-shot" aria-label="Enlarge screenshot: Registration: enter your account details"><img src="imgs/goaff/step-1.png" alt="Registration: enter your account details" loading="lazy"></a></figure><h3>3. Already have an account?</h3><p>If you see a message saying an account already exists, select “Login” and sign in with your Google account, as shown below.</p><figure class="goaff-figure"><a href="imgs/goaff/step-2.png" class="zoom-shot" aria-label="Enlarge screenshot: Login: use your existing account"><img src="imgs/goaff/step-2.png" alt="Login: use your existing account" loading="lazy"></a></figure><h3>4. Find your affiliate link and discount code</h3><p>Once logged in, open the affiliate dashboard. Find your personal affiliate link and coupon code in the areas indicated by the arrows.</p><figure class="goaff-figure"><a href="imgs/goaff/step-3.png" class="zoom-shot" aria-label="Enlarge screenshot: Dashboard: affiliate link on the left; coupon code on the right"><img src="imgs/goaff/step-3.png" alt="Dashboard: affiliate link on the left; coupon code on the right" loading="lazy"></a></figure></section><section id="goaff-b"><span class="eyebrow">Option B</span><h2>If you received an invitation email</h2><h3>1. Find your GoAffPro invitation</h3><p>Check the inbox associated with your affiliate account. Delivery may be delayed.</p><h3>2. Click “Create Account” in the email</h3><figure class="goaff-figure"><a href="imgs/goaff/step-4.png" class="zoom-shot" aria-label="Enlarge screenshot: Invitation email: select Create Account"><img src="imgs/goaff/step-4.png" alt="Invitation email: select Create Account" loading="lazy"></a></figure><h3>3. Set your password, then sign in</h3><figure class="goaff-figure"><a href="imgs/goaff/step-5.png" class="zoom-shot" aria-label="Enlarge screenshot: Create password: set your account password"><img src="imgs/goaff/step-5.png" alt="Create password: set your account password" loading="lazy"></a></figure><h3>4. Open your affiliate dashboard</h3><p>Find your personal affiliate link and discount code.</p><figure class="goaff-figure"><a href="imgs/goaff/step-6.png" class="zoom-shot" aria-label="Enlarge screenshot: Dashboard: copy your own affiliate link and coupon code"><img src="imgs/goaff/step-6.png" alt="Dashboard: copy your own affiliate link and coupon code" loading="lazy"></a></figure></section><section><span class="eyebrow">Before publishing</span><h2>Publishing Checklist</h2><ul class="check"><li>Copy your personal GoAffPro affiliate link from the correct brand’s dashboard.</li><li>Copy your assigned discount code exactly as displayed.</li><li>Include both in your video description or post caption, and check that the link opens correctly.</li></ul><div class="panel"><h3>Video description example</h3><p>Shop here: [YOUR GOAFFPRO AFFILIATE LINK]<br>Use code [YOUR DISCOUNT CODE] at checkout.</p></div></section></div></main></div>
   <div class="brief-column">
 
 <header class="hero"><div class="wrap">
@@ -1248,7 +1257,8 @@ function shortlabel(p){
   return [p.bikes+"-bike", p.ramp?"ramp":"no-ramp", p.fold?"fold":"fixed", p.tilt?"tilt":null].filter(Boolean).join(" · ")+"\n"+p.cap+" lb";
 }
 
-function apply(sku){
+function apply(sku){document.querySelector(".reviewing-highlight").hidden=false;
+  document.querySelector(".brief-column").hidden=false; document.getElementById("goaff-view").hidden=true; document.querySelector(".goaff-nav").setAttribute("aria-pressed","false");
   const p = PRODUCTS[sku]; if(!p) return;
   document.querySelectorAll('[data-field]').forEach(el=>{
     const k = el.getAttribute('data-field');
@@ -1316,5 +1326,9 @@ function apply(sku){
   apply(PRODUCTS[start] ? start : "4148");
 })();
 </script>
-</body>
+<dialog id="shot-dialog"><button type="button">Close ✕</button><img alt="Enlarged GoAffPro process screenshot"></dialog><script>
+function openGoaff(){document.querySelector(".reviewing-highlight").hidden=true;document.querySelector('.brief-column').hidden=true;document.getElementById('goaff-view').hidden=false;document.querySelector('.goaff-nav').setAttribute('aria-pressed','true');document.querySelectorAll('.pcard').forEach(c=>c.classList.remove('selected'));document.title='GoAffPro Guide · Creator Brief';window.scrollTo(0,0);}
+document.querySelector('.goaff-nav').addEventListener('click',openGoaff);document.querySelector('.mobile-goaff').addEventListener('click',e=>{e.preventDefault();openGoaff()});document.getElementById('mobileProductSelect').addEventListener('click',()=>{});document.querySelector('nav .cur a').addEventListener('click',()=>apply(document.getElementById('mobileProductSelect').value));
+const dlg=document.getElementById('shot-dialog');document.querySelectorAll('.zoom-shot').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();dlg.querySelector('img').src=a.href;dlg.showModal()}));dlg.querySelector('button').addEventListener('click',()=>dlg.close());dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+</script></body>
 </html>
